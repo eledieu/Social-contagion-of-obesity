@@ -17,6 +17,7 @@ function [adj_mat,unique_source,unique_target]=mssmm_adj()
             end
 
         end 
+        unique_source=unique_source(2:end)
         length(unique_source)
     %% Vector of unique target
         unique_target=zeros(1,1);
@@ -35,6 +36,7 @@ function [adj_mat,unique_source,unique_target]=mssmm_adj()
             end
 
         end 
+        unique_target=unique_target(2:end)
         length(unique_target)    
     %% Creation of the adjacency matrix
     adj_mat=zeros(length(unique_source),length(unique_source));
