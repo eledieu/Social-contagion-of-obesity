@@ -1,4 +1,4 @@
-function [adj_mat]=mssmm_adj()
+function [adj_mat,unique_source,unique_target]=mssmm_adj()
     load('mssmm_data.mat')
     %% Vector of unique source
         unique_source=zeros(1,1);
@@ -37,7 +37,7 @@ function [adj_mat]=mssmm_adj()
         end 
         length(unique_target)    
     %% Creation of the adjacency matrix
-    adj_mat=zeros(length(unique_source),length(unique_source))
+    adj_mat=zeros(length(unique_source),length(unique_source));
     for i=1:length(source)
         for j=1:length(unique_source)
             for k=1:length(unique_target)
