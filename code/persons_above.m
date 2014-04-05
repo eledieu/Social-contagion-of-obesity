@@ -1,25 +1,25 @@
-function PersonID_x_AboveAtExam = persons_above( persons, vector_mesure, date_mesure, treshhold)
+function PersonID_x_AboveAtExam = persons_above( persons, vector_mesure, date_mesure, threshold)
 %persons_above computes for each unique person if they are above the
-%treshhold at a given day.
+%threshold at a given day.
 %
 % OUTPUT:: PersonID_x_AboveAtExam : Returns a unique_persons by
 % first_date_of_mesure_to_last_date_of_mesure matrix with value 1 if above
-% the treshhold and 0 else.
+% the threshold and 0 else.
 % INPUT::
 % persons: a vector of cells of personID strings,
 % vector_mesure: a vector of numeric values, where value at row x
 % corresponds to person at row x.
 % date_mesure: a vector of dates in integer form, where value at row x
 % corresponds to mesure at row x.
-% treshhold: a treshhold above which the state is 1.
+% threshold: a threshold above which the state is 1.
 
 egos = unique(persons); % different persons
 duration = max(date_mesure)-min(date_mesure) + 1; % Time elapsed from first mesurement (inclusive) to last mesurement (inclusive)
 date_mesure = date_mesure - min(date_mesure) + 1; % normalize date_weight
 
 aboveTreshhold = vector_mesure; % we will directly overwrite the values in two passes
-aboveTreshhold(aboveTreshhold <= treshhold) = 0; % binary matrix: 0 -> weight below treshhold at this date for this person
-aboveTreshhold(aboveTreshhold > treshhold) = 1; % binary matrix: 1 -> weight above or equal treshhold at this date for this person
+aboveTreshhold(aboveTreshhold <= threshold) = 0; % binary matrix: 0 -> weight below threshold at this date for this person
+aboveTreshhold(aboveTreshhold > threshold) = 1; % binary matrix: 1 -> weight above or equal threshold at this date for this person
 
 PersonID_x_AboveAtExam = zeros(length(egos),duration); % make empty
 
