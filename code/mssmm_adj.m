@@ -1,4 +1,16 @@
 function [adj_mat,unique_source,unique_target]=mssmm_adj(source,target,source_friendship,date_friendship_can)
+    %% Returns the adjacency matrix
+    % Input: 
+        % source is the vector source in FunFit Excel file, target is
+        % the vector source in FunFit Excel file, source_friendship is the
+        % vector source_friendship in SurveyFriendship Excel file, date_friendship is the
+        % vector date_friendship in SurveyFriendship Excel file
+    % Output:
+        % Adjacency matrix is a  3D matrix, the first 2D corresponds to
+        % person and the third D to the date of friendship
+        % unique_source is the vector of unique source (idem for
+        % unique_target)
+    
     load('mssmm_data.mat')
     %% Vector of unique source
         unique_source=zeros(1,1);
