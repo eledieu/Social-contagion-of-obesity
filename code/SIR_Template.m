@@ -40,7 +40,7 @@ for t=1:5000
         for j=1:N
             
             % Iterate over the neighbors and spread the disease
-            parfor k=1:8
+            for k=1:8
                 i2 = i+neigh(k, 1);
                 j2 = j+neigh(k, 2);
                 % Check that the cell is within the grid boundaries
