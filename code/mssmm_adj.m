@@ -1,13 +1,13 @@
-function [adj_mat,unique_source,unique_target]=mssmm_adj(source,target,source_friendship,date_friendship_can)
-    %% Returns the adjacency matrix
+function [adj_mat,adj_mat_bin,unique_source,unique_target]=mssmm_adj(source,target,source_friendship,date_friendship_can)
+    %% Returns the adjacency matrix, a binary adjacency matrix, a vector of unique elements of source and target
     % Input: 
         % source is the vector source in FunFit Excel file, target is
         % the vector source in FunFit Excel file, source_friendship is the
         % vector source_friendship in SurveyFriendship Excel file, date_friendship is the
         % vector date_friendship in SurveyFriendship Excel file
     % Output:
-        % Adjacency matrix is a  3D matrix, the first 2D corresponds to
-        % person and the third D to the date of friendship
+        % adj_mat is a  3D adjacency matrix matrix, the first two dimensions corresponds to
+        % the person and the third dimension to the date of friendship
         % unique_source is the vector of unique source (idem for
         % unique_target)
     
@@ -54,7 +54,8 @@ function [adj_mat,unique_source,unique_target]=mssmm_adj(source,target,source_fr
  
     date=unique(date_friendship_can);
     adj_mat=zeros(length(unique_source),length(unique_target),length(date));
-    
+    adj_mat_bin=zeros(length(unique_source),length(unique_target),length(date));
+
     for t=1:length(date)
         for i=1:length(source_friendship)
             
@@ -65,7 +66,11 @@ function [adj_mat,unique_source,unique_target]=mssmm_adj(source,target,source_fr
             % Adjacency matrix element value equal to weight_friendship
             % value ranges from 0 to 7
             adj_mat(source_friendship_index,target_friendship_index,t)=weight_friendship(i);
-            
+            if weight_friendship(i)~=0
+                adj_mat_bin(source_friendship_index,target_friendship_index,t)=1;
+            else
+            end
+
         end
     end
 end
