@@ -24,6 +24,9 @@ function changes =mssmm_regression(persons_changed_states, count_contacts_above,
  
  if ~(under_to_above)
      pcs = persons_changed_states;
+     % number_contacts = transpose(number_contacts); @Elise: did you want to
+     % transpose number_contacts? otherwise there is a dimension mismatch
+     % in the following line
      contacts_new_state = repmat(number_contacts, 1, n-1)-contacts_new_state;
  end
 
