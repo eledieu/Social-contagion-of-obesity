@@ -13,15 +13,9 @@ function PersonID_x_ChangedStateAtDayX = persons_changed_state( PersonID_x_Above
 
 [m,n] = size(PersonID_x_AboveAtExam);
 
-P_by_S = zeros(m,n); % is short for PersonID_x_ChangedStateAtDayX
-P_by_E = PersonID_x_AboveAtExam;
+P_by_E1 = PersonID_x_AboveAtExam(:,1:(n-1)) ;
+P_by_E2 = PersonID_x_AboveAtExam(:,2:(n)) ;
 
-for i= 1:m
-    for j= 2:n
-        P_by_S(i, j) = P_by_E(i, j-1) - P_by_E(i, j) ;
-    end
-end
-
-PersonID_x_ChangedStateAtDayX =  P_by_S;
+PersonID_x_ChangedStateAtDayX =  P_by_E1-P_by_E2;
 
 end
