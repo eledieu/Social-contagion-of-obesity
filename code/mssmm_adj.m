@@ -67,7 +67,7 @@ function [adj_mat,adj_mat_bin,unique_source,unique_target]=mssmm_adj(source,targ
             % value ranges from 0 to 7
             adj_mat(source_friendship_index,target_friendship_index,t)=weight_friendship(i);
             if weight_friendship(i)~=0
-                adj_mat_bin(source_friendship_index,target_friendship_index,t)=1;
+                adj_mat_bin(source_friendship_index,target_friendship_index,t)=1;% binary adjacency matrix
             else
             end
 
