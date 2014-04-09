@@ -3,7 +3,7 @@ function PersonID_x_ChangedStateAtDayX = persons_changed_state( PersonID_x_Above
 %state with respect to previous day.
 %
 % OUTPUT:: PersonID_x_ChangedStateAtDayX : Returns a unique_persons by
-% first_date_of_mesure_to_last_date_of_mesure matrix with absolute value 1 if the person changed state with respect to previous day and 0 else.
+% first_date_of_mesure_to_last_date_of_mesure matrix with value 0 if the person doesn't changed state with respect to previous day.
 % If the person state changed from under the threshold to above the
 % threshold on the next day, the value is -1.
 % If the person state changed from above the threshold to under the
@@ -13,15 +13,6 @@ function PersonID_x_ChangedStateAtDayX = persons_changed_state( PersonID_x_Above
 
 [m,n] = size(PersonID_x_AboveAtExam);
 
-P_by_S = zeros(m,n); % is short for PersonID_x_ChangedStateAtDayX
-P_by_E = PersonID_x_AboveAtExam;
-
-for i= 1:m
-    for j= 2:n
-        P_by_S(i, j) = P_by_E(i, j-1) - P_by_E(i, j) ;
-    end
-end
-
-PersonID_x_ChangedStateAtDayX =  P_by_S;
+PersonID_x_ChangedStateAtDayX = [zeros(m,1),PersonID_x_AboveAtExam(:,1:n-1)] - [zeros(m,1),PersonID_x_AboveAtExam(:,2:n)];
 
 end
