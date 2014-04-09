@@ -3,8 +3,8 @@ function changes =mssmm_regression(persons_changed_states, count_contacts_above,
  % with respect to the number of contacts under (or above) threshold at the time step
  % of the change
  
- %OUTPUT :: A column vector of the number of changes. The index of the
- %column vector corresponds to the number of contacts in the new state +1
+ %OUTPUT :: A matrix of two columns. The first one corresponds to the number of contacts observed
+ % the second one to the percentage of the changes that took place in this particular configuration of contacts
  
  %INPUT ::
  % persons_changed_state : output of the function persons_changed_state
@@ -27,8 +27,8 @@ function changes =mssmm_regression(persons_changed_states, count_contacts_above,
      contacts_new_state = repmat(number_contacts, 1, n-1)-contacts_new_state;
  end
 
- changes_with_percentage = tabulate(contacts_new_state(pcs>0));
- changes = changes_with_percentage(:,1:2)
+ changes_with_counts = tabulate(contacts_new_state(pcs>0));
+ changes = changes_with_counts(:,[1 3])
  
     
 end
