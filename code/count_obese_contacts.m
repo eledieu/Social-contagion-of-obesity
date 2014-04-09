@@ -4,7 +4,7 @@
 % time j (entry in the matrix is one) or not (entry is zero)
 % adj matrix, entry (i,j) represents whether person i know person j or not
 function [number_of_obese_contacts] = count_obese_contacts(weight_over_time, adj_matrix)
-    number_of_persons = size(weight_over_time,1);
+    number_of_persons = 90;%size(weight_over_time,1);
     time_steps = size(weight_over_time,2);
     number_of_obese_contacts = zeros(number_of_persons, time_steps);
     for i = 1:number_of_persons

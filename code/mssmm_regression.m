@@ -19,15 +19,15 @@ function changes =mssmm_regression(persons_changed_states, count_contacts_above,
  
  n = size(count_contacts_above, 2);
  
- pcs = -persons_changed_state;
+ pcs = -persons_changed_states;
  contacts_new_state = count_contacts_above(:,2:n);
  
- if NOT(under_to_above)
-     pcs = persons_changed_state;
+ if ~(under_to_above)
+     pcs = persons_changed_states;
      contacts_new_state = repmat(number_contacts, 1, n-1)-contacts_new_state;
  end
 
- changes_with_counts = tabulate(contacts_new_state(pcs>0));
+ changes_with_counts = tabulate(uint8(contacts_new_state(pcs>0)));
  changes = changes_with_counts(:,[1 3])
  
     
