@@ -66,21 +66,20 @@ function [adj_mat,adj_mat_bin,unique_source,unique_target,unique_funf_group]=mss
     adj_mat=zeros(length(unique_source),length(unique_target),length(date));
     adj_mat_bin=zeros(length(unique_source),length(unique_target),length(date));
 
-    for t=1:length(date)
-        for i=1:length(source_friendship)
-            
-            % source_friendship_index returns index of person in the adjacency matrix
-            source_friendship_index=find(ismember(unique_source,source_friendship(i)));
-            target_friendship_index=find(ismember(unique_target,target_friendship(i)));
-            
-            % Adjacency matrix element value equal to weight_friendship
-            % value ranges from 0 to 7
-            adj_mat(source_friendship_index,target_friendship_index,t)=weight_friendship(i);
-            if weight_friendship(i)>2
-                adj_mat_bin(source_friendship_index,target_friendship_index,t)=1;% binary adjacency matrix 1
-            else
-            end
+    for i=1:length(source_friendship)
 
+        % source_friendship_index returns index of person in the adjacency matrix
+        source_friendship_index=find(ismember(unique_source,source_friendship(i)));
+        target_friendship_index=find(ismember(unique_target,target_friendship(i)));
+        date_index=find(ismember(date,date_friendship_can(i)));
+
+        % Adjacency matrix element value equal to weight_friendship
+        % value ranges from 0 to 7
+        adj_mat(source_friendship_index,target_friendship_index,date_index)=weight_friendship(i);
+        if weight_friendship(i)>2
+            adj_mat_bin(source_friendship_index,target_friendship_index,date_index)=1;% binary adjacency matrix 1
+        else
         end
+
     end
 end
