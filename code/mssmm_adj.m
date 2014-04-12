@@ -1,10 +1,13 @@
-function [adj_mat,adj_mat_bin,unique_source,unique_target]=mssmm_adj(source,target,source_friendship,date_friendship_can)
+function [adj_mat,adj_mat_bin,unique_source,unique_target,unique_funf_group]=mssmm_adj(source,target,source_friendship,date_friendship_can)
     %% Returns the adjacency matrix, a binary adjacency matrix, a vector of unique elements of source and target
     % Input: 
         % source is the vector source in FunFit Excel file, target is
         % the vector source in FunFit Excel file, source_friendship is the
         % vector source_friendship in SurveyFriendship Excel file, date_friendship is the
         % vector date_friendship in SurveyFriendship Excel file
+        % self-reported friendship ranging from 0 to 7. The binary
+        % adjacency matrix displays 1 when the the self reported
+        % friendship > 2
     % Output:
         % adj_mat is a  3D adjacency matrix matrix, the first two dimensions corresponds to
         % the person and the third dimension to the date of friendship
@@ -49,7 +52,14 @@ function [adj_mat,adj_mat_bin,unique_source,unique_target]=mssmm_adj(source,targ
 
         end 
         unique_target=unique_target(2:end);
-        length(unique_target)    
+        length(unique_target)
+    %% Return the experiment to which a person belongs (Control,See-Peer,Pay-Peer)
+        unique_funf_group=cell(length(unique_source),1);
+        for i=1:length(unique_source)    
+            funf_group_index=find(ismember(source,unique_source(i)));
+            unique_funf_group{i}=funf_group{funf_group_index};
+        end
+       
     %% Creation of the adjacency matrix
  
     date=unique(date_friendship_can);
@@ -66,8 +76,8 @@ function [adj_mat,adj_mat_bin,unique_source,unique_target]=mssmm_adj(source,targ
             % Adjacency matrix element value equal to weight_friendship
             % value ranges from 0 to 7
             adj_mat(source_friendship_index,target_friendship_index,t)=weight_friendship(i);
-            if weight_friendship(i)~=0
-                adj_mat_bin(source_friendship_index,target_friendship_index,t)=1;% binary adjacency matrix
+            if weight_friendship(i)>2
+                adj_mat_bin(source_friendship_index,target_friendship_index,t)=1;% binary adjacency matrix 1
             else
             end
 
