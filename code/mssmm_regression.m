@@ -24,14 +24,11 @@ function changes =mssmm_regression(persons_changed_states, count_contacts_above,
  
  if ~(under_to_above)
      pcs = persons_changed_states;
-     % number_contacts = transpose(number_contacts); @Elise: did you want to
-     % transpose number_contacts? otherwise there is a dimension mismatch
-     % in the following line
+     number_contacts = transpose(number_contacts);
      contacts_new_state = repmat(number_contacts, 1, n-1)-contacts_new_state;
  end
-
+ 
  changes_with_counts = tabulate(uint8(contacts_new_state(pcs>0)));
  changes = changes_with_counts(:,[1 3])
- 
-    
+   
 end
