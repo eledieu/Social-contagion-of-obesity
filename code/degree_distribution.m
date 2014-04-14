@@ -21,17 +21,17 @@ function [number_of_contacts,avg_degree]=degree_distribution(adj_mat_bin)
 
         total_contacts=sum(number_of_contacts(:,t));
           
-        figure,
+        % figure,
 
-        bar(1:max(number_of_contacts(:,t)),1/total_contacts*histc(number_of_contacts(:,t),1:max(number_of_contacts(:,t))),'histc')% Histogram of degree distribution
+        % bar(1:max(number_of_contacts(:,t)),1/total_contacts*histc(number_of_contacts(:,t),1:max(number_of_contacts(:,t))),'histc')% Histogram of degree distribution
         
-        figure,
+        % figure,
         
         avg_degree(t,1)=total_contacts/len_source;
-        hist(number_of_contacts(:,t))% Histogram of degree distribution
-        xlabel('Number of close friends')
-        ylabel('Close friends frequency')
-        title(['Close friends distribution t=',num2str(t)],'FontSize',10,'fontweight','bold')
+        % hist(number_of_contacts(:,t))% Histogram of degree distribution
+        % xlabel('Number of close friends')
+        % ylabel('Close friends frequency')
+        % title(['Close friends distribution t=',num2str(t)],'FontSize',10,'fontweight','bold')
         
     end
  
