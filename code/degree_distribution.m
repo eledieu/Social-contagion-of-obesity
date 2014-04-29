@@ -1,5 +1,6 @@
 function [number_of_contacts,avg_degree]=degree_distribution(adj_mat_bin)
     %% Returns the degree distribution (distribution of contact numbers) of the network at each time
+    
     % Input:
             % Binary adjacency matrix: 1 if person are close friends and 0
             % otherwise

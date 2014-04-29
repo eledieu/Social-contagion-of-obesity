@@ -1,6 +1,6 @@
 function [knn]=assortativity(adj_mat_bin)
     %% Returns the average nearest-neighbor degree to see if assortativity
-        
+      
     % Input:
             % Binary adjacency matrix: 1 if person are close friends and 0
             % otherwise

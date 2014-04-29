@@ -1,6 +1,6 @@
 function [] = plot_graph_report(number_of_contacts,avg_degree,knn)
 %Plot the graphs used in the final report
-
+ 
 %% Degree distribution graph
     for t=1:size(avg_degree,1)
         total_contacts=sum(number_of_contacts(:,t));
