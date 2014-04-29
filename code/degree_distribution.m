@@ -12,7 +12,7 @@ function [number_of_contacts,avg_degree]=degree_distribution(adj_mat_bin)
     len_source=size(adj_mat_bin,1); % number of persons
     
     number_of_contacts=zeros(len_source,date);
-    avg_degree=zeros(date,1)
+    avg_degree=zeros(date,1);
     
     for t=1:date
         for k=1:len_source
