@@ -1,4 +1,4 @@
-function [number_of_contacts,avg_degree]=degree_distribution(adj_mat_bin)
+function [contacts,avg_degree]=degree_distribution(adj_mat_bin)
     %% Returns the degree distribution (distribution of contact numbers) of the network at each time
     
     % Input:
@@ -12,15 +12,15 @@ function [number_of_contacts,avg_degree]=degree_distribution(adj_mat_bin)
     date=size(adj_mat_bin,3); % number of date
     len_source=size(adj_mat_bin,1); % number of persons
     
-    number_of_contacts=zeros(len_source,date);
+    contacts=zeros(len_source,date);
     avg_degree=zeros(date,1);
     
     for t=1:date
         for k=1:len_source
-            number_of_contacts(k,t)=sum(adj_mat_bin(k,:,t)); % Number of close friends of person k at time t 
+            contacts(k,t)=sum(adj_mat_bin(k,:,t)); % Number of close friends of person k at time t 
         end
 
-        total_contacts=sum(number_of_contacts(:,t));
+        total_contacts=sum(contacts(:,t));
           
         % figure,
 
