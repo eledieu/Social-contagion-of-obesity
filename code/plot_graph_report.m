@@ -1,28 +1,57 @@
-function [] = plot_graph_report(number_of_contacts,avg_degree,knn)
+function [] = plot_graph_report(contacts,avg_degree,knn,knn_weight,unique_weight,distribution_degree_coeff)
 %Plot the graphs used in the final report
- 
 %% Degree distribution graph
     for t=1:size(avg_degree,1)
-        total_contacts=sum(number_of_contacts(:,t));
-        figure;
-        bar(1:max(number_of_contacts(:,t)),1/total_contacts*histc(number_of_contacts(:,t),1:max(number_of_contacts(:,t))),'histc');% Histogram of degree distribution
-        title(['Close Friends Distribution t=',num2str(t)],'FontSize',10,'fontweight','bold');
+        total_contacts=sum(contacts(:,t));
         
         figure;       
-        hist(number_of_contacts(:,t));% Histogram of degree distribution
-        xlabel('Number of Close Friends');
-        ylabel('Close Friends Frequency');
-        title(['Close Friends Distribution t=',num2str(t)],'FontSize',10,'fontweight','bold');
+        set(gca,'Fontsize',16);
+        [nelements,centers]=hist(contacts(:,t),10);
+        hist(contacts(:,t),10);% Histogram of degree distribution        
+        xlabel('Number of Close Friends','Fontsize',16);
+        ylabel('Close Friends Frequency','Fontsize',16);
+        
+        hold;
+        plot(centers,exp(distribution_degree_coeff(t,1))*centers.^distribution_degree_coeff(t,2),'*-');
+        hold off;
+        
     end
-%% Network assortativity
+%% Network assortativity - Average nearest neighbor degree 
     for t=1:size(knn,2)
         axis=1:size(knn,1);
-            figure;
-            knn(knn==0)=nan;
-            plot(axis(1:45),knn(1:45,t),'*');
-            xlabel('Average Degree k');
-            ylabel('Average Nearest Neighbor Degree knn(k)');            
-            title(['Network Assortativity t=',num2str(t)],'FontSize',10,'fontweight','bold');
+        figure;
+        set(gca,'Fontsize',16);
+        knn(knn==0)=nan;
+        plot(axis(1:45),knn(1:45,t),'*');
+        xlabel('Average Degree','Fontsize',16);
+        ylabel('Average Nearest Neighbor Degree','Fontsize',16);
+        xlim([0 35]);   
+        hold on
+        
+        fit_knn=fitlm(axis(1:45),knn(1:45,t));
+        fit_knn_coeff=double(fit_knn.Coefficients);
+        plot(axis(1:45),fit_knn_coeff(1,1)+fit_knn_coeff(2,1)*axis(1:45),'-');
+        hold off
+        ylim([0 15]);
+    end
+%% Network assortativity - Average nearest neighbor weight 
+    for t=1:size(knn_weight,2)
+        figure;
+        set(gca,'Fontsize',16);
+        unique_weight(knn_weight==0)=nan;
+        unique_weight(isnan(knn_weight))=nan;        
+        knn_weight(knn_weight==0)=nan;
+        plot(unique_weight(:,1),knn_weight(:,3),'*');
+        xlabel('Subject Weight','Fontsize',16);
+        ylabel('Average Nearest Neighbor Weight','Fontsize',16);
+        xlim([40 110]);
+        hold on
+        
+        fit_knn_weight=fitlm(unique_weight(:,1),knn_weight(:,3));
+        fit_knn_weight_coeff=double(fit_knn_weight.Coefficients);
+        plot(unique_weight(:,1),fit_knn_weight_coeff(1,1)+fit_knn_weight_coeff(2,1)*unique_weight(:,1),'-')
+        hold off
+        
     end
 end
 
