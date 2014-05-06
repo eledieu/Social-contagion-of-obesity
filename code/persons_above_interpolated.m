@@ -25,17 +25,17 @@ for i= 1:length(egos)
     mesureDateEgo = date_mesure(personInd); % We need the indexes corresponding to a person sorted by date, in order to compute the final matrix in one pass per person.
     dates_mesures = [mesureDateEgo, personInd]; % Prepend date vector to index vector
     dates_mesures = sortrows(dates_mesures); % Sort after date vector
-    mbd = dates_mesures(:,2); % extract sorted by date index vector of the mesures
+    mbd = dates_mesures(:,2); % extract sorted by date index vector of the mesures i.e. MesuresByDate
     
     person_mesures = vector_mesure(mbd); % all the mesures of an ego
-    p = polyfit(mesureDateEgo,person_mesures,length(personInd));
-    x = linspace(1,duration);
+    p = polyfit(mesureDateEgo,person_mesures,length(egos)-1);
+    x = 1:duration;
     y = polyval(p,x);
     
     
     y(y <= threshold) = 0; % binary matrix: 0 -> weight below threshold at this date for this person
     y(y > threshold) = 1; % binary matrix: 1 -> weight above or equal threshold at this date for this person
-    PersonID_x_AboveAtExam(i) = y';
+    PersonID_x_AboveAtExam(i,:) = y;
 end
 
 end
