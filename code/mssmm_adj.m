@@ -16,49 +16,49 @@ function [adj_mat,adj_mat_bin,unique_source,unique_target,unique_funf_group]=mss
     
     load('mssmm_data.mat')
     %% Vector of unique source
-        unique_source=zeros(1,1);
-        for i=1:length(source) 
-            newpart=1;
-            for j=1:length(unique_source)
-                if isequal(source(i),unique_source(j)) % test if 
-                    newpart=0;
-                else
-                end
-            end
-
-            if newpart==1
-                unique_source=vertcat(unique_source,source(i));
-            else
-            end
-
-        end 
-        unique_source=unique_source(2:end)
+        unique_source= unique(participantID_weight);%zeros(1,1);
+%         for i=1:length(source) 
+%             newpart=1;
+%             for j=1:length(unique_source)
+%                 if isequal(source(i),unique_source(j)) % test if 
+%                     newpart=0;
+%                 else
+%                 end
+%             end
+% 
+%             if newpart==1
+%                 unique_source=vertcat(unique_source,source(i));
+%             else
+%             end
+% 
+%         end 
+%        unique_source=unique_source(2:end)
         length(unique_source)
     %% Vector of unique target
-        unique_target=zeros(1,1);
-        for i=1:length(target) 
-            newpart=1;
-            for j=1:length(unique_target)
-                if isequal(target(i),unique_target(j)) % test if 
-                    newpart=0;
-                else
-                end
-            end
-
-            if newpart==1
-                unique_target=vertcat(unique_target,target(i));
-            else
-            end
-
-        end 
-        unique_target=unique_target(2:end);
+        unique_target= unique(participantID_weight);%zeros(1,1);
+%         for i=1:length(target) 
+%             newpart=1;
+%             for j=1:length(unique_target)
+%                 if isequal(target(i),unique_target(j)) % test if 
+%                     newpart=0;
+%                 else
+%                 end
+%             end
+% 
+%             if newpart==1
+%                 unique_target=vertcat(unique_target,target(i));
+%             else
+%             end
+% 
+%         end 
+%         unique_target=unique_target(2:end);
         length(unique_target)
     %% Return the experiment to which a person belongs (Control,See-Peer,Pay-Peer)
-        unique_funf_group=cell(length(unique_source),1);
-        for i=1:length(unique_source)    
-            funf_group_index=find(ismember(source,unique_source(i)));
-            unique_funf_group{i}=funf_group{funf_group_index};
-        end
+%         unique_funf_group=cell(length(unique_source),1);
+%         for i=1:length(unique_source)    
+%             funf_group_index=find(ismember(source,unique_source(i)));
+%             unique_funf_group{i}=funf_group{funf_group_index};
+%         end
        
     %% Creation of the adjacency matrix
  
