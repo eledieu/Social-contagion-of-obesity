@@ -14,7 +14,7 @@ function [adj_mat,adj_mat_bin,unique_source,unique_target,unique_funf_group]=mss
         % unique_source is the vector of unique source (idem for
         % unique_target)
     
-    load('mssmm_data.mat')
+    load('DATA.mat')
     %% Vector of unique source
         unique_source= unique(participantID_weight);%zeros(1,1);
 %         for i=1:length(source) 

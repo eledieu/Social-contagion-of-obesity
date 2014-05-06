@@ -1,5 +1,5 @@
 function Project_script(studied_variable,threshold)
-    load('mssmm_data.mat')
+    load('DATA.mat')
     [adj_mat,adj_mat_bin,unique_source,unique_target]=mssmm_adj(participantID_weight,participantID_weight,source_friendship,date_friendship_can)
     [contacts,avg_degree]=degree_distribution(adj_mat_bin)
     PersonID_x_AboveAtExam = persons_above_interpolated( participantID_weight,studied_variable, date_weigth_can,threshold)
