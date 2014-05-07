@@ -28,7 +28,7 @@ for i= 1:length(egos)
     mbd = dates_mesures(:,2); % extract sorted by date index vector of the mesures i.e. MesuresByDate
     
     person_mesures = vector_mesure(mbd); % all the mesures of an ego
-    p = polyfit(mesureDateEgo,person_mesures,length(egos)-1);
+    p = polyfit(mesureDateEgo,person_mesures,length(mesureDateEgo)-1);
     x = 1:duration;
     y = polyval(p,x);
     
