@@ -12,14 +12,15 @@ function [above b g a] =mssmm_regression_results(change_above, change_under)
  % changes_under : output of the function msssm_regression on the changes
  % from the above threshold state to the under threshold state
  
- X_above = change_above(:,1);
+ 
+ x_above = change_above(:,1);
  y_above = change_above(:,2)/100;
  
- X_under = change_under(:,1);
+ x_under = change_under(:,1);
  y_under = change_under(:,2)/100;
  
- lin_above = fitlm(X_above, y_above, 'linear')
- lin_under = fitlm(X_under, y_under, 'linear')
+ lin_above = fitlm(x_above, y_above, 'linear')
+ lin_under = fitlm(x_under, y_under, 'linear')
     
  coef_above = cell2mat(table2cell(lin_above.Coefficients));
  coef_under = cell2mat(table2cell(lin_under.Coefficients));
