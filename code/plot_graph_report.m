@@ -25,10 +25,10 @@ function [] = plot_graph_report(contacts,avg_degree,knn,knn_weight,unique_weight
         plot(axis(1:45),knn(1:45,t),'*');
         xlabel('Average Degree','Fontsize',16);
         ylabel('Average Nearest Neighbor Degree','Fontsize',16);
-        xlim([0 35]);   
+        xlim([0 25]);   
         hold on
         
-        fit_knn=fitlm(axis(1:45),knn(1:45,t));
+        fit_knn=fitlm(axis(1:45),knn(1:45,t))
         fit_knn_coeff=double(fit_knn.Coefficients);
         plot(axis(1:45),fit_knn_coeff(1,1)+fit_knn_coeff(2,1)*axis(1:45),'-');
         hold off
@@ -47,7 +47,7 @@ function [] = plot_graph_report(contacts,avg_degree,knn,knn_weight,unique_weight
         xlim([40 110]);
         hold on
         
-        fit_knn_weight=fitlm(unique_weight(:,1),knn_weight(:,3));
+        fit_knn_weight=fitlm(unique_weight(:,1),knn_weight(:,3))
         fit_knn_weight_coeff=double(fit_knn_weight.Coefficients);
         plot(unique_weight(:,1),fit_knn_weight_coeff(1,1)+fit_knn_weight_coeff(2,1)*unique_weight(:,1),'-')
         hold off
