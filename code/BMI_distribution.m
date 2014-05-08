@@ -15,6 +15,8 @@ function [] = BMI_distribution(BMI,participantID_weight)
     end
     axis=1:50;
     histfit(unique_BMI,50);
+    mean(unique_BMI);
+    median(unique_BMI);
 
 end
 
