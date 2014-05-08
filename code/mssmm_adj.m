@@ -33,7 +33,7 @@ function [adj_mat,adj_mat_bin,unique_source,unique_target,unique_funf_group]=mss
 % 
 %         end 
 %        unique_source=unique_source(2:end)
-        length(unique_source)
+        number_of_egos = length(unique_source) % for logging
     %% Vector of unique target
         unique_target= unique(participantID_weight);%zeros(1,1);
 %         for i=1:length(target) 
@@ -52,7 +52,7 @@ function [adj_mat,adj_mat_bin,unique_source,unique_target,unique_funf_group]=mss
 % 
 %         end 
 %         unique_target=unique_target(2:end);
-        length(unique_target)
+        %length(unique_target)
     %% Return the experiment to which a person belongs (Control,See-Peer,Pay-Peer)
 %         unique_funf_group=cell(length(unique_source),1);
 %         for i=1:length(unique_source)    
