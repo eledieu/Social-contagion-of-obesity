@@ -1,4 +1,4 @@
-function [] = plot_graph_report(contacts,avg_degree,knn,knn_weight,unique_weight,distribution_degree_coeff)
+function [] = plot_graph_report(contacts,avg_degree,knn,knn_weight,unique_weight,distribution_degree_coeff,BMI,participantID_weight)
 %Plot the graphs used in the final report
 %% Degree distribution graph
     for t=1:size(avg_degree,1)
@@ -53,6 +53,26 @@ function [] = plot_graph_report(contacts,avg_degree,knn,knn_weight,unique_weight
         hold off
         
     end
+%% Returns the distribution of the BMI
+    unique_participantID_weight=unique(participantID_weight);
+    
+    unique_BMI=zeros(length(unique_participantID_weight),1);
+    
+    for i=1:length(unique_participantID_weight)
+        index_unique=find(ismember(participantID_weight,unique_participantID_weight(i)));
+        Index_unique=index_unique(1);
+        unique_BMI(i)=BMI(Index_unique);
+    end
+    axis=1:50;
+    unique_BMI(unique_BMI<0)=nan; 
+    histfit(unique_BMI,10,'lognormal');
+    xlabel('BMI','Fontsize',16);
+    ylabel('BMI frequency','Fontsize',16);
+    xlim([15 50]);
+    unique_BMI=unique_BMI(~isnan(unique_BMI));    
+    mean(unique_BMI)
+    dfittool(unique_BMI)
+
 end
 
 
