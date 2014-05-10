@@ -19,6 +19,8 @@ date_mesure = date_mesure - min(date_mesure) + 1; % normalize date_weight
 
 PersonID_x_AboveAtExam = zeros(length(egos),duration); % make empty
 
+warning('off', 'MATLAB:polyfit:RepeatedPointsOrRescale'); % temporarly turn off those warnings about badly conditioned polynomials, should discuss what to do about it
+
 for i= 1:length(egos)
     personInd = find(ismember(persons,egos(i))); % personInd = person indexes
     
