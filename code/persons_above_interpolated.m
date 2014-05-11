@@ -19,7 +19,7 @@ date_mesure = date_mesure - min(date_mesure) + 1; % normalize date_weight
 
 PersonID_x_AboveAtExam = zeros(length(egos),duration); % make empty
 
-warning('off', 'MATLAB:polyfit:RepeatedPointsOrRescale'); % temporarly turn off those warnings about badly conditioned polynomials, should discuss what to do about it
+%warning('off', 'MATLAB:polyfit:RepeatedPointsOrRescale'); % temporarly turn off those warnings about badly conditioned polynomials, should discuss what to do about it
 
 for i= 1:length(egos)
     personInd = find(ismember(persons,egos(i))); % personInd = person indexes
@@ -28,11 +28,18 @@ for i= 1:length(egos)
     dates_mesures = [mesureDateEgo, personInd]; % Prepend date vector to index vector
     dates_mesures = sortrows(dates_mesures); % Sort after date vector
     mbd = dates_mesures(:,2); % extract sorted by date index vector of the mesures i.e. MesuresByDate
+    mesureDateEgo = dates_mesures(:,1); % dates sorted
     
     person_mesures = vector_mesure(mbd); % all the mesures of an ego
-    p = polyfit(mesureDateEgo,person_mesures,length(mesureDateEgo)-1);
+    % remove multiple mesurements that were taken on the same day
+    [mesureDateEgo, index_mesureDateEgo, ~] = unique(mesureDateEgo,'stable');
+    person_mesures = person_mesures(index_mesureDateEgo);
+    mesure_count = length(mesureDateEgo);
+    degree = min(mesure_count-1, 1); % restrict polynom to degree <= 2 to avoid edge effects
+    p = polyfit(mesureDateEgo,person_mesures,degree);
     x = 1:duration;
     y = polyval(p,x);
+    plot(x,y);
     
     
     y(y <= threshold) = 0; % binary matrix: 0 -> weight below threshold at this date for this person
