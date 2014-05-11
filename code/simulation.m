@@ -1,16 +1,17 @@
-function [simulation] = simulation(a,b,g)
-%parameters: a=spontaneous infection rate; b=transmission rate; g=recovery rate;
-dt=0.01;        % time step
-d = 20;         % simulated duration
+function [susceptible,infected] = simulation(a,b,g, initial_infect, duration, step)
+%parameters: a=spontaneous infection rate; b=transmission rate; g=recovery
+%rate; duration=duration of the simulation; step=time step
+dt=step;        % time step
+d = duration;         % simulated duration
 
 % initial condition
-S=100;      % Susceptible egos
-I=20;   % Infected individualsS
+S=100-initial_infect;      % Susceptible egos
+I=initial_infect;   % Infected individualsS
 % book-keeping variable
 index = 0;
 
 % simulation loop
-for t=0:dt:d
+for t=1:dt:d+1
     index = index + 1;
     dI = (b*S*I-g*I+a*S)*dt;
     dS = (-b*S*I+g*I-a*S)*dt;
@@ -25,5 +26,6 @@ plot(x,s)
 grid on
 hold on
 plot(x,i,'o')
-hold on
-
+hold off
+infected = i;
+susceptible = s;
