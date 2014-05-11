@@ -19,9 +19,24 @@
     change_under=mssmm_regression(PersonID_x_ChangedStateAtDayX, number_of_contacts, sum(adj_mat_bin(:,:,1)),true)
     change_above=mssmm_regression(PersonID_x_ChangedStateAtDayX, number_of_contacts, sum(adj_mat_bin(:,:,1)),false)
     [above b g a] =mssmm_regression_results(change_above, change_under)
+    %plot regression results
+    figure(1);
+    plot(change_above(:,1),change_above(:,2))
+    hold on;
+    x = change_above(:,1);
+    y = b*x+a;
+    plot(x,y*100,'o');
+    hold off;
     initial_infected = sum(PersonID_x_AboveAtExam(:,1)) * (100 / size(PersonID_x_AboveAtExam,1));
+    figure(2);
     [susceptible,infected] = simulation(a,b,g, initial_infected, size(PersonID_x_AboveAtExam,2), 0.01);
 %end
 
-% First test: studied_variable=BMI, threshold=26
-
+% First test: studied_variable=BMI, threshold=26: slight correlation,
+% ~stable state at 75% infected
+% Second test: studied_variable=body_fat, threshold=25: apparent negative correlation,
+% ~stable state at 15% infected
+% Third test: studied_variable=BMI, threshold=25: some correlation,
+% ~stable state at 90% infected
+% Fourth test: studied_variable=body_fat, threshold=25: apparent negative correlation,
+% ~stable state at 12% infected
