@@ -102,19 +102,31 @@ We use an extension of the classic SIS model proposed by Hill et al. The SIS mod
 \paragraph{}
 
 In the standard SIS model, infection can only be transmitted through the contact with an infected person. The SIS model is presented in :
-% Manque equation
+\begin{align}
+      dI/dt  & =  \beta SI-gI \nonumber\\
+      dS/dt   & =  -\beta SI+gI \\ 
+      I+S & =  N \nonumber
+\end{align}
 where  is the number of  infected individuals, and  is the number of susceptible individuals,  is the transmission rate,  is the recovery rate and  is the total population. 
 
 \subsection{SISa model}
 \paragraph{}
 Hill et al. propose an extension of the SIS model, called SISa, to allow for automatic infection without having social contact. They introduce the rate of automatic infection rate  to obtain the model described in :
-% Manque equation
+\begin{align}
+      dI/dt  & =  \beta SI-gI+aS \nonumber\\
+      dS/dt   & =  -\beta SI+gI-aS \\
+      I+S & =  N \nonumber
+\end{align}
 
 \paragraph{}
 The automatic infection rate  and the transmission rate can be deduced from the transition probabilities from susceptible to infected after a time  such that:
-% Manque equation
+\begin{equation}
+P(S\to I,\delta t) & \sim & (a+\beta n)\delta t
+\end{equation}
 while the recovery rate can be deduced from the probability of transition from infected to susceptible after a time :
-% Manque equation
+\begin{equation}
+P(I\to S,\delta t) & \sim & g\delta t
+\end{equation}
 
 \paragraph{}
 
