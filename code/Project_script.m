@@ -14,6 +14,10 @@
     [contacts,avg_degree]=degree_distribution(adj_mat_bin);
     disp(avg_degree);
     PersonID_x_AboveAtExam = persons_above( participantID_weight,studied_variable, date_weigth_can,threshold);
+    
+    %Plots the evolution of the number of person above
+    figure
+    plot(sum(PersonID_x_AboveAtExam)/size(PersonID_x_AboveAtExam,1))
     PersonID_x_ChangedStateAtDayX = persons_changed_state( PersonID_x_AboveAtExam );
     [number_of_contacts] = count_obese_contacts(PersonID_x_AboveAtExam, adj_mat_bin);
     change_under=mssmm_regression(PersonID_x_ChangedStateAtDayX, number_of_contacts, sum(adj_mat_bin(:,:,1)),true)
@@ -21,11 +25,11 @@
     [above b g a] =mssmm_regression_results(change_above, change_under)
     %plot regression results
     figure(1);
-    plot(change_above(:,1),change_above(:,2))
+    plot(change_above(:,1),change_above(:,2),'o')
     hold on;
     x = change_above(:,1);
     y = b*x+a;
-    plot(x,y*100,'o');
+    plot(x,y*100);
     hold off;
     initial_infected = sum(PersonID_x_AboveAtExam(:,1)) * (100 / size(PersonID_x_AboveAtExam,1));
     figure(2);
