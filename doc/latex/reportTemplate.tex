@@ -130,20 +130,20 @@ In order to implement the SISa we searched for a longitudinal dataset with simil
 
 One difficulty encountered was to harmonize the different files of the Friends and Family dataset which had to be cross-checked.
 
-\paragraph{Measure timing}
-
+\subsubsection{Measure timing}
+\paragraph{}
 We have encountered an issue regarding the timing of the examinations as subjects have not been surveyed at the same exact day as the friendship was measured. We have therefore interpolated the data to solve this problem.
 
-\paragraph{Network description and analysis}
-
+\subsubsection{Network description and analysis}
+\paragraph{}
 Subjects reported their self-perceived closeness to other egos on a scale from 0 to 7 where a number strictly higher than 2 stands for close friendship enabling us to build a binary adjacency matrix over time where a 1 stands for close friendship.
 
 \paragraph{}
 
 Furthermore, we have analyzed additional properties of the network, namely its degree distribution, its diameter as well as the density. We both use Matlab and Gephi to perform the network analysis and visualization.
 
-\paragraph{Ego change of state}
-
+\subsubsection{Ego change of state}
+\paragraph{}
 We follow Hill et al. to determine how contacts with non obese and obese people influence the transition to another state by performing longitudinal regression. 
 \paragraph{}
 For each subject, we track the change in BMI and body fat and define a threshold above which a person changes state. While WHO defines obesity as a BMI higher than 30, our sample only contained 5 obese subjects out of a total of 85. This percentage of obese egos is much lower than the percentage of obese adult in the US which was higher than 35\% (Flegal, 2012) and we have therefore decided to lower the threshold BMI above which a person changes state. As we want to evaluate the impact of having a contact with an obese person  on the state of ego, we retrieve the number of obese contacts for each subject.
