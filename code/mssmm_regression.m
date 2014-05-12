@@ -16,15 +16,15 @@ function changes =mssmm_regression(persons_changed_states, count_contacts_above,
  % each person
  % under_to_above : boolean value. if TRUE, then changes from under_to_above ; else
  % then compute the changes from state above to state under threshold
- 
- n = size(count_contacts_above, 2);
+
  
  pcs = -persons_changed_states;
- contacts_new_state = count_contacts_above(:,1:n);
+ contacts_new_state = count_contacts_above;
  
  if ~(under_to_above)
      pcs = persons_changed_states;
      number_contacts = transpose(number_contacts);
+     n = size(count_contacts_above, 2);
      contacts_new_state = repmat(number_contacts, 1, n)-contacts_new_state;
  end
  
