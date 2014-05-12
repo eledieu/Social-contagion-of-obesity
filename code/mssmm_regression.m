@@ -29,6 +29,7 @@ function changes =mssmm_regression(persons_changed_states, count_contacts_above,
  end
  
  changes_with_counts = tabulate(uint8(contacts_new_state(pcs>0)));
- changes = changes_with_counts(:,[1 3]);
+ changes = changes_with_counts(:,[1 2]);
+ changes(:,2) = changes(:,2)/size(persons_changed_states,1);
    
 end
