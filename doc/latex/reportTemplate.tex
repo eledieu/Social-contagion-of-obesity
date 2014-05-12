@@ -63,8 +63,8 @@
 
 
 \section{Abstract}
-
-
+\paragraph{}
+Obesity is a major health concern in the US causing annual death of more than 300'000 deaths per year. World Health Organization has implemented intervention program to fight obesity.  Understanding how people become obese is key to design adequate intervention program. In 2007, Christakis and Fowler claimed that obesity spread through social networks and argued that contacts with obese person increase the likelihood of becoming obese. This claim has been subject to much controversy and was refuted by Shalizi and Thomas who highlighted the confusion made between social contagion, homophily and confounding.  Hill et al. have proposed a derived version of the SIS model, the SISa model, to allow for both social transmission of obesity and automatic infection. Using a network of 85 subjects living next to MIT for which longitudinal weight data were available, we try to fit a SISa model. However, we do not find any evidence of social contagion for obesity using conventional significance level keeping in mind the relatively limited size of our sample.
 \section{Individual contributions}
 
 
@@ -78,7 +78,7 @@ Obesity is a major health concern in the world and particularly in the US. In th
 Smith and Christakis  highlight the importance of the social environment associated with the physical environment as a factor of good health hinting at public health interventions which should be elaborated in harmony with the social network. Christakis and Fowler (Christakis & Fowler, 2007) argue that obesity spread  through social networks as they find that contacts with obese persons increase the likelihood to become obese. This controversial result has been debated by many including Shalizi and Thomas (Shalizi & Thomas, 2011) who point out the confusion made between homophily where subjects gather with those who resemble them, social contagion and confounding.
 
 \paragraph{}
-Hill et al. (Hill, Rand, Nowak, & Christakis, 2010)(Smith & Christakis, 2008) among others  have revealed have extended the approach of Christakis and Fowler to allow for a transmission of obesity through social networks but also capture spontaneous non social contagion. They introduce a new model, the SISa model, derived from the classic SIS disease model to evaluate the relative effect of social and non social contagion. Hill et al. extend economic diffusion models which also include automatic diffusion by adding the possibility of recovery whereas economic diffusion are considered to be permanently acquired.
+Hill et al. (Hill, Rand, Nowak, & Christakis, 2010) among others have extended the approach of Christakis and Fowler to allow for a transmission of obesity through social networks but also capture spontaneous non social contagion. They introduce a new model, the SISa model, derived from the classic SIS disease model to evaluate the relative effect of social and non social contagion. Hill et al. extend economic diffusion models which also include automatic diffusion by adding the possibility of recovery whereas economic diffusion are considered to be permanently acquired.
 
 \subsection{Motivation}
 \paragraph{}
@@ -88,14 +88,14 @@ It is essential to understand how people become obese to design adequate health 
 Therefore, we want to examine if social infection really plays a role in obesity spread and compare the  relative effect of social and automatic infection in obesity. We want to test if we find similar results as Hill et al. applying the SISa model to a different sample.
 
 \paragraph{}
-To answer our question, we apply the SISa model to a dataset collected by Aharony et al. (Aharony, Pan, Ip, Khayal, & Pentland, 2011) which contains one of the largest mobile data experiments done in academia to test the validity of the SISa model and estimate the model parameters in order to evaluate the social and non social aspects of obesity contagion. Aharony et al. have deployed a sensing system over 15 months to follow 130 adult members and collected their physical activity, their weight and their friendship status. We have restricted our study to a subset of [85] adults for which complete corpulence data were available.
+To answer our question, we apply the SISa model to a dataset collected by Aharony et al. (Aharony, Pan, Ip, Khayal, & Pentland, 2011) which contains one of the largest mobile data experiments done in academia to test the validity of the SISa model and estimate the model parameters in order to evaluate the social and non social aspects of obesity contagion. Aharony et al. have deployed a sensing system over 15 months to follow 130 adult members and collected their physical activity, their weight and their friendship status. We have restricted our study to a subset of 85 adults for which complete corpulence data were available.
 
 
 \section{Description of the Model}
 
 \subsection{SIS model}
 \paragraph{}
-We use an extension of the classic SIS model proposed by Hill et al. The SIS model is an adaptation of the SIR model developed by Kermack and McKendrick(Kermack & McKendrick, 1932). In the SIR model the population is divided into three groups: susceptible, infected, recovered. The disease is transmitted when a susceptible person enters in contact with an infected person with a so called transmission rate β. Once infected, a person can recover with a recovery rate g and then becomes completely immune to the disease. The SIS model allows to model a disease or a behaviour that can occur repeatedly meaning that recovering from the disease do not confer immunity.
+We use an extension of the classic SIS model proposed by Hill et al. The SIS model is an adaptation of the SIR model developed by Kermack and McKendrick (Kermack & McKendrick, 1932). In the SIR model the population is divided into three groups: susceptible, infected, recovered. The disease is transmitted when a susceptible person enters in contact with an infected person with a so called transmission rate β. Once infected, a person can recover with a recovery rate g and then becomes completely immune to the disease. The SIS model allows to model a disease or a behaviour that can occur repeatedly meaning that recovering from the disease do not confer immunity.
 
 \paragraph{}
 
@@ -122,11 +122,11 @@ In addition, we follow Hill et al. approach and examine how a contact with an in
 
 \subsection{Data description}
 \paragraph{}
-In order to implement the SISa we searched for a longitudinal dataset with similar properties as the Framingham Heart Study dataset used by Hill et al. We used the Friends and Family dataset collected by Aharony et al. The dataset consists of 130 subjects who all belong to a young residential community with at least one family member affiliated to MIT. The data were collected from October 2010 to May 2011 and an intervention program was carried out from October to December 2010. We have therefore decided to restrict our study to a subsample of the data in which there was no intervention program in place and have focussed our study on the period from end of December 2010 to May 2011. 
+In order to implement the SISa we searched for a longitudinal dataset with similar properties as the Framingham Heart Study dataset used by Hill et al. We used the Friends and Family dataset collected by Aharony et al. The dataset consists of 130 subjects who all belong to a young residential community with at least one family member affiliated to MIT. The data were collected from October 2010 to May 2011 and an intervention program was carried out from October to December 2010. We have therefore decided to restrict our study to a subsample of the data in which there was no intervention program in place and have therefore excluded the period running from October 2010 to December 2010. 
 
 \paragraph{}
 
-Another difficulty was to harmonize the different files of the Friends and Family dataset which had to be cross-checked.
+One difficulty encountered was to harmonize the different files of the Friends and Family dataset which had to be cross-checked.
 
 \paragraph{Measure timing}
 
@@ -134,7 +134,7 @@ We have encountered an issue regarding the timing of the examinations as subject
 
 \paragraph{Network description and analysis}
 
-Subjects reported their self-perceived closeness to other subjects on a scale from 0 to 7 where a number strictly higher than 2 stands for close friendship enabling us to build a binary adjacency matrix over time.
+Subjects reported their self-perceived closeness to other egos on a scale from 0 to 7 where a number strictly higher than 2 stands for close friendship enabling us to build a binary adjacency matrix over time where a 1 stands for close friendship.
 
 \paragraph{}
 
@@ -144,7 +144,7 @@ Furthermore, we have analyzed additional properties of the network, namely its d
 
 We follow Hill et al. to determine how contacts with non obese and obese people influence the transition to another state by performing longitudinal regression. 
 \paragraph{}
-For each subject, we track the change in BMI and body fat and define a threshold above which a person changes state. While WHO defines obesity as a BMI higher than 30, our sample only contained 5 obese subjects out of a total of [108/90/85]. This percentage of obese egos is much lower than the percentage of obese adult in the US which was higher than 35\% [CITATION FLEGAL] and we have therefore decided to lower the threshold BMI above which a person changes state. As we want to evaluate the impact of having a contact with an obese person  on the state of ego, we retrieve the number of obese contacts for each subject.
+For each subject, we track the change in BMI and body fat and define a threshold above which a person changes state. While WHO defines obesity as a BMI higher than 30, our sample only contained 5 obese subjects out of a total of 85. This percentage of obese egos is much lower than the percentage of obese adult in the US which was higher than 35\% (Flegal, 2012) and we have therefore decided to lower the threshold BMI above which a person changes state. As we want to evaluate the impact of having a contact with an obese person  on the state of ego, we retrieve the number of obese contacts for each subject.
 
 \subsection{Regression}
 \paragraph{}
@@ -154,10 +154,10 @@ We follow Hill and al. approach and perform a regression of the probability of t
 
 \subsection{Network characteristic}
 \paragraph{}
-The Friends and Family network consists of [85] nodes. The friends distribution varies across time as the self perceived closeness is measured at three different times. The degree distribution at t=1 is shown in [Figure]. The average degree distribution is quite stable over the measurement period standing at 6.7, 6.1, 7.4 for t=1...3. In comparison, the average degree amounted to 3 at the end of the Framingham Heart Study.
+The Friends and Family network consists of 85 nodes. The friends distribution varies across time as the self perceived closeness is measured at three different times. The degree distribution at t=1 is shown in [Figure]. The average degree distribution is quite stable over the measurement period standing at 6.7, 6.1, 7.4 for t=1...3. In comparison, the average degree amounted to 3 at the end of the Framingham Heart Study.
 
 \paragraph{}
-We test a power law to fit the degree distribution of the network as many social networks are considered to be scale free networks(Barabási, 2009) and find that the Friends and Family network exhibits characteristics of a scale-free network.
+We test a power law to fit the degree distribution of the network as many social networks are considered to be scale free networks (Barabási, 2009) and find that the Friends and Family network exhibits characteristics of a scale-free network.
 
 
 %Manque figure
@@ -165,7 +165,7 @@ We test a power law to fit the degree distribution of the network as many social
 The parameters of the power law fitted function y=αxβ are α=55 and β=-1.07.
 
 \paragraph{}
-We test two types of assortativity: social assortativity and weight assortativity. We run the regression of the average nearest neighbor degree against the average degree of a subject to test the social assortativity of the network. The Friends and Family network is socially assortative as shown in Figure 3as subjects with a higher number of close friends tend to have a higher nearest neighbor degree.We find a positive coefficient on the average degree equal to 0.34 and significant at the 5% level.
+We then test two types of assortativity: social assortativity and weight assortativity. We run the regression of the average nearest neighbor degree against the average degree of a subject to test the social assortativity of the network. The Friends and Family network is socially assortative as shown in Figure 3as subjects with a higher number of close friends tend to have a higher nearest neighbor degree.We find a positive coefficient on the average degree equal to 0.34 and significant at the 5% level.
 
 
 % Manque figure
@@ -176,11 +176,11 @@ However we do not obtain significant results to support weight assortativity whe
 
 \subsection{Regression results}
 \paragraph{}
-Our findings relate in parts to the outcome of the analysis of Christakis. We solved to some extend the question raised in his talk at Dartmouth College in 2008 concerning the outcome in a different socio-economic environment, where perception of obesity is different. But when we used the body fat metric which is reportedly more a more precise measure for obesity, we surprisingly did not encounter neater proof of the infectious characteristic of obesity, but much rather a negative correlation. What's more, we determined in multiple tests that running the regression with even a small shift in the threshold value, yielded a great impact in the outcome, even negating the correlation when ran against the body fat measure. This surprising mismatch between BMI and body fat, which normally relate to each other in terms of the following approximation formula:
+Our findings relate in parts to the outcome of the analysis of Christakis. We solved to some extent the question raised in his talk at Dartmouth College in 2008 concerning the outcome in a different socio-economic environment, where perception of obesity is different. But when we used the body fat metric which is reportedly a more precise measure for obesity, we surprisingly did not encounter neater proof of the infectious characteristic of obesity, as we find a negative correlation. What's more, we determined in multiple tests that running the regression with even a small shift in the threshold value triggering a change of state, yielded a great impact in the outcome, even negating the correlation when ran against the body fat measure. This surprising mismatch between BMI and body fat, which normally relate to each other in terms of the following approximation formula:
 
 %Manque formule
 
-, is, as far as we can tell, due  to the remarkably high skeletal muscle percentage of the total weight reported by the study participants. This is to some extend in scope with the fact that the study participants were drawn from a university setting, were university athletes are overrepresented compared to the general population. 
+, is, as far as we can tell, due to the remarkably high skeletal muscle percentage of the total weight reported by the study participants. This reflects the fact that the study participants were drawn from a university setting, where university athletes are overrepresented compared to the general population. 
 
 \paragraph{}
 To determine the parameters of the differential systems, we have made a regression over the percentage of change from one state to another given the number of contacts in the target state. The obtained p-values are high. The smaller p-value we get is indeed 0.306 for the study of the BMI with a threshold put at 25. The parameters we get this way do not seem reliable. 
@@ -201,17 +201,17 @@ The evolution of the number of persons above a given threshold of BMI is strongl
 
 \subsection{Importance of the a parameter in a SISa model}
 \paragraph{}
-To tell things upfront, the SISa model is very sensible to the value of each single value, with the ration of b/g being the most prevalent. As we can infer from the following graphs, a single decimal change can yield noticeable different outcomes.
+To tell things upfront, the SISa model is very sensible to the value of each single value, with the ration of \beta/g being the most prevalent. As we can infer from the following graphs, a single decimal change can yield noticeable different outcomes.
 
 
 
 \subsection{Society implication}
 \paragraph{}
-The society implication of clearly understanding the to what extend and in which manner social spreading of obesity happens are huge. Given that it is morally unacceptable to marginalize obese people and even the small direct correlation is hard to link causation, we prone a more holistic approach were obesity is seen as a risk factor as opposed to a disease . Thus this risk factor has to be contained through environmental reforms on one hand like easier access to sport facilities, bike to work initiatives, promotion of healthier food alternatives in canteen settings, and social reforms on the other hand where risk reduction due to obesity is rewarded and scheduled physical activity is integrated in the daily work routine. Politics also have to play a role as they did with the tobacco advertisement restrictions and warning by translating these efforts to the junk food advertisement restrictions and clearer formulated food declaration, lobbying for "junk food free" as they did for smoke free .
+The society implication of clearly understanding the to what extent and in which manner social spreading of obesity happens are huge. Given that it is morally unacceptable to marginalize obese people and even the small direct correlation is hard to link causation, we prone a more holistic approach were obesity is seen as a risk factor as opposed to a disease . Thus this risk factor has to be contained through environmental reforms on one hand like easier access to sport facilities, bike to work initiatives, promotion of healthier food alternatives in canteen settings, and social reforms on the other hand where risk reduction due to obesity is rewarded and scheduled physical activity is integrated in the daily work routine. Politics also have to play a role as they did with the tobacco advertisement restrictions and warning by translating these efforts to the junk food advertisement restrictions and clearer formulated food declaration, lobbying for "junk food free" as they did for smoke free .
 
 \subsection{Limitations}
 \paragraph{}
-Despite Aharony et al. claims, the Friends and Family network does not appear to be representative of the US population as all subjects were members of a residential living community living next to MIT. Flegal et al. have found a prevalence of obesity of 35\% among US adults. In comparison, the mean BMI in the Friends and Family network is 23 and 5 out of the [85] subjects are obese in the sample at the beginning of the study.
+Despite Aharony et al. claims, the Friends and Family network does not appear to be representative of the US population as all subjects were members of a residential living community living next to MIT. The BMI distribution of the Friends and Family netwoek does not reflect the BMI distribution of the entire US population. Flegal et al. have found a prevalence of obesity of 35\% among US adults. In comparison, the mean BMI in the Friends and Family network is 23 and 5 out of the [85] subjects are obese in the sample at the beginning of the study.
  
 %Figure []: BMI distribution of the Friends and Family network. 
 
@@ -219,7 +219,7 @@ A lognormal distribution is fitted to the BMI data with a mean of 3.13 and stand
 
 \paragraph{}
 
-An other factor that a model purely bases on social contagion does not capture is the alimentary culture that is not directly related to social interaction but largely shared across a social group. Some populations, and therefore the social networks they span, are much more at risk of a deregulation of equilibrium in their macronutrient intake, struggling to cover their protein needs while increasing their overall calories consumption. 
+Another factor that a model purely based on social contagion does not capture is the alimentary culture that is not directly related to social interaction but largely shared across a social group. Some populations, and therefore the social networks they span, are much more at risk of a deregulation of equilibrium in their macronutrient intake, struggling to cover their protein needs while increasing their overall calories consumption. 
 
 \section{Summary and Outlook}
 
