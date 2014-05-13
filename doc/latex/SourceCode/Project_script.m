@@ -4,7 +4,7 @@
     prompt = 'Choose a meaningful threshold for the variable:';
     threshold = input(prompt);
     % Generate adjancency matrix of subjects
-    [adj_mat,adj_mat_bin,unique_source,unique_target] = mssmm_adj (participantID_weight,participantID_weight,source_friendship,date_friendship_can);
+    [adj_mat,adj_mat_bin,unique_source,unique_target] = mssmm_adj (participantID_weight,participantID_weight, source_friendship,date_friendship_can);
     % Degree distibution in the network
     [contacts,avg_degree] = degree_distribution(adj_mat_bin);
     disp(avg_degree);

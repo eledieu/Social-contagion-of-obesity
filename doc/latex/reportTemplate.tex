@@ -78,7 +78,13 @@ We initially familiarized ourselves with the current literature and the SIS/SISa
 
 \subsection{Introduction}
 \paragraph{}
-Obesity is a major health concern in the world and particularly in the US. In the US, it is estimated that obesity causes annual mortality of more than 300'000 deaths per year (Flegal, Williamson, Pamuk, \& Rosenberg, 2004) despite the difficulty to precisely evaluate death directly linked to obesity. The World Health Organization defines obesity as a Body Mass Index higher than 30. WHO implemented in 2004 the WHO Global Strategy on Diet, Physical Activity and Health in order to cope with obesity. While WHO recognizes the importance of "supportive environments and communities" to fight obesity, most proposed solutions put the emphasis on an individual approach such as limiting the quantity of fat absorbed, increasing the consumption of fruits and vegetables or practising physical activity. 
+Obesity is a major health concern in the world and particularly in the US. In the US, it is estimated that obesity causes annual mortality of more than 300'000 deaths per year (Flegal, Williamson, Pamuk, \& Rosenberg, 2004) despite the difficulty to precisely evaluate death directly linked to obesity. The World Health Organization defines obesity as a Body Mass Index higher than 30. In 2008, 507 Million adults were obese, see Figure 1.
+\begin{figure}[!ht]
+\center
+   \includegraphics[scale = 0.25]{Nature_p50_Global_spread_of_obesity.png}
+   \caption{\label{4} Map illustrating global spread of obesity.}
+\end{figure}
+ WHO implemented in 2004 the WHO Global Strategy on Diet, Physical Activity and Health in order to cope with obesity. While WHO recognizes the importance of "supportive environments and communities" to fight obesity, most proposed solutions put the emphasis on an individual approach such as limiting the quantity of fat absorbed, increasing the consumption of fruits and vegetables or practising physical activity. 
 
 \paragraph{}
 Smith and Christakis (Smith \& Christakis, 2008)  highlight the importance of the social environment associated with the physical environment as a factor of good health hinting at public health interventions which should be elaborated in harmony with the social network. Christakis and Fowler (Christakis \& Fowler, 2007) argue that obesity spread  through social networks as they find that contacts with obese persons increase the likelihood to become obese. This controversial result has been debated by many including Shalizi and Thomas (Shalizi \& Thomas, 2011) who point out the confusion made between homophily where subjects gather with those who resemble them, social contagion and confounding.
@@ -158,6 +164,12 @@ Subjects reported their self-perceived closeness to other egos on a scale from 0
 
 Furthermore, we have analyzed additional properties of the network, namely its degree distribution, its diameter as well as the density. We both use Matlab and Gephi to perform the network analysis and visualization.
 
+\begin{figure}[!ht]
+\center
+   \includegraphics[scale = 0.25]{Network_t1.png}
+   \caption{\label{4} Initial state of the social network of the study participants. The thickness of the links translate the importance of the relation and the Atlas2 clustering algorithm was run.}
+\end{figure}
+
 \subsubsection{Ego change of state}
 \paragraph{}
 We follow Hill et al. to determine how contacts with non obese and obese people influence the transition to another state by performing longitudinal regression. 
@@ -172,34 +184,34 @@ We follow Hill and al. approach and perform a regression of the probability of t
 
 \subsection{Network characteristic}
 \paragraph{}
-The Friends and Family network consists of 85 nodes. The friends distribution varies across time as the self perceived closeness is measured at three different times. The degree distribution at t=1 is shown in the figure 1. The average degree distribution is quite stable over the measurement period standing at 6.7, 6.1, 7.4 for t=1...3. In comparison, the average degree amounted to 3 at the end of the Framingham Heart Study.
+The Friends and Family network consists of 85 nodes. The friends distribution varies across time as the self perceived closeness is measured at three different times. The degree distribution at t=1 is shown in the Figure []. The average degree distribution is quite stable over the measurement period standing at 6.7, 6.1, 7.4 for t=1...3. In comparison, the average degree amounted to 3 at the end of the Framingham Heart Study.
 
 \paragraph{}
 We test a power law to fit the degree distribution of the network as many social networks are considered to be scale free networks (Barabási, 2009) and find that the Friends and Family network exhibits characteristics of a scale-free network.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \center
    \includegraphics[scale = 0.9]{friends_distribution_figure1.png}
    \caption{\label{1} Average degree distribution of close friends}
 \end{figure}
 
 \paragraph{}
-The parameters of the power law fitted function y=\alpha x^\beta \]   are \alpha=55 \] and \beta=-1.07\].
+The parameters of the power law fitted function y=\alpha x^\beta \]   are \alpha=55 \] \ and \beta=-1.07\].
 
 \paragraph{}
-We then test two types of assortativity: social assortativity and weight assortativity. We run the regression of the average nearest neighbor degree against the average degree of a subject to test the social assortativity of the network. The Friends and Family network is socially assortative as shown in Figure 2 as subjects with a higher number of close friends tend to have a higher nearest neighbor degree. We find a positive coefficient on the average degree equal to 0.34 and significant at the 5\% level.
+We then test two types of assortativity: social assortativity and weight assortativity. We run the regression of the average nearest neighbor degree against the average degree of a subject to test the social assortativity of the network. The Friends and Family network is socially assortative as shown in Figure [] as subjects with a higher number of close friends tend to have a higher nearest neighbor degree. We find a positive coefficient on the average degree equal to 0.34 and significant at the 5\% level.
 
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \center
    \includegraphics[scale=0.72]{social_assortativity_figure2.png}
    \caption{\label{2} Friends and Family Network Social Assortativity.}
 \end{figure}
 
 \paragraph{}
-However we do not obtain significant results to support weight assortativity when running the regression of the average nearest neighbor weight against a subject's weight (see Figure 3). The coefficient of the regression slope of the average nearest neighbor weight against a subject weight is not significant at any conventional level. We therefore conclude that a subject weight is not associated with its average nearest neighbor weight. 
+However we do not obtain significant results to support weight assortativity when running the regression of the average nearest neighbor weight against a subject's weight (see Figure []). The coefficient of the regression slope of the average nearest neighbor weight against a subject weight is not significant at any conventional level. We therefore conclude that a subject weight is not associated with its average nearest neighbor weight. 
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \center
    \includegraphics[scale=0.72]{weight_assortativity_figure3.png}
    \caption{\label{3} Friends and Family Network Weight Assortativity.}
@@ -241,9 +253,9 @@ The society implication of clearly understanding the to what extent and in which
 
 \subsection{Limitations}
 \paragraph{}
-Despite Aharony et al. claims, the Friends and Family network does not appear to be representative of the US population as all subjects were members of a residential living community living next to MIT. The BMI distribution of the Friends and Family netwoek does not reflect the BMI distribution of the entire US population. Flegal et al. have found a prevalence of obesity of 35\% among US adults. In comparison, the mean BMI in the Friends and Family network is 23 and 5 out of the 85 subjects are obese in the sample at the beginning of the study.
+Despite Aharony et al. claims, the Friends and Family network does not appear to be representative of the US population as all subjects were members of a residential living community living next to MIT. The BMI distribution of the Friends and Family network does not reflect the BMI distribution of the entire US population. Flegal et al. have found a prevalence of obesity of 35\% among US adults. In comparison, the mean BMI in the Friends and Family network is 23 and 5 out of the 85 subjects are obese in the sample at the beginning of the study.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \center
    \includegraphics[scale = 0.9]{bmi_distribution_figure4.png}
    \caption{\label{4} BMI distribution of the Friends and Family network. A lognormal distribution is fitted to the BMI data with a mean of 3.13 and standard deviation of 0.18.}
@@ -257,6 +269,20 @@ Another factor that a model purely based on social contagion does not capture is
 \paragraph{}
 We take into account Shalizi and Thomas comments regarding environmental confounding and decided to examine the role of socio-environment in obesity. Using data from the US Department of Agriculture, we run a regression of the 2010 obesity prevalence in 3'137 US counties against the median household income in USD'000 of these same counties. These results highlight the role of confounding and support the argument of Shalizi and Thomas as we find a negative coefficient on the median household income in USD'000 equal to -0.19 and statistically significant at all conventional level. One possible explanation for this is that low income families might consume fatter food of lower quality because of budget constraints.
 
+{
+\begin{table}[htbp]\centering
+ \caption{Results of OLS Model of the Obesity Prevalence in the US 
+\label{tabresult regress}}
+\begin{tabular}{l c c }\hline\hline
+\multicolumn{1}{c} {\textbf{Variable}}
+ & {\textbf{Coefficient}}  & \textbf{(Std. Err.)} \\ \hline
+Median Household Income (USD'000)  &  -0.188 (***)  & (0.006)\\
+Intercept  &  38.7 (***)  & (0.27)\\
+\hline
+\end{tabular}
+\end{table}
+}
+
 \section{Summary and Outlook}
 
 \subsection{Summary}
@@ -269,6 +295,7 @@ In order to better understand one of the major plague of our society, we have ap
 
 Given the importance of obesity, we believe it is essential to account for the roles of confounding variables in obesity spread. We do not exclude that obesity may spread through social network and think it is critical to perform a new study based on dataset comparable to the Framingham Heart Study to clarify the controversy surrounding the potential social contagion of obesity. The number of deaths linked directly or indirectly to obesity as well as the high social costs of obesity (Cawley \& Meyerhoefer, 2012) are such that this issue needs to be tackled.
 
+\newpage
 \section{References}
 \paragraph{}
 Aharony, N., Pan, W., Ip, C., Khayal, I., \& Pentland, A. (2011). Social fMRI: Investigating and shaping social mechanisms in the real world. Pervasive and Mobile Computing, 7(6), 643–659.
@@ -291,6 +318,7 @@ Shalizi, C. R., \& Thomas, A. C. (2011). Homophily and contagion are generically
 \paragraph{}
 Smith, K. P., \& Christakis, N. A. (2008). Social networks and health. Annu. Rev. Sociol, 34, 405–429.
 
+\newpage
 \section{Annexes}
 \subsection{Code listing}
 \lstset{breaklines=true}

@@ -44,7 +44,7 @@ function [adj_mat,adj_mat_bin,unique_source,unique_target,unique_funf_group] = m
 
         % Adjacency matrix element value equal to weight_friendship
         % value ranges from 0 to 7
-        adj_mat(source_friendship_index,target_friendship_index,date_index) = weight_friendship(i);
+        adj_mat(source_friendship_index, target_friendship_index,date_index) = weight_friendship(i);
         if weight_friendship(i)>2
             adj_mat_bin(source_friendship_index, target_friendship_index, date_index) = 1;% binary adjacency matrix 1
         else
