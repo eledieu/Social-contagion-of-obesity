@@ -257,6 +257,20 @@ Another factor that a model purely based on social contagion does not capture is
 \paragraph{}
 We take into account Shalizi and Thomas comments regarding environmental confounding and decided to examine the role of socio-environment in obesity. Using data from the US Department of Agriculture, we run a regression of the 2010 obesity prevalence in 3'137 US counties against the median household income in USD'000 of these same counties. These results highlight the role of confounding and support the argument of Shalizi and Thomas as we find a negative coefficient on the median household income in USD'000 equal to -0.19 and statistically significant at all conventional level. One possible explanation for this is that low income families might consume fatter food of lower quality because of budget constraints.
 
+{
+\begin{table}[htbp]\centering
+ \caption{Results of OLS Model of the Obesity Prevalence in the US 
+\label{tabresult regress}}
+\begin{tabular}{l c c }\hline\hline
+\multicolumn{1}{c} {\textbf{Variable}}
+ & {\textbf{Coefficient}}  & \textbf{(Std. Err.)} \\ \hline
+Median Household Income (USD'000)  &  -0.188 (***)  & (0.006)\\
+Intercept  &  38.7 (***)  & (0.27)\\
+\hline
+\end{tabular}
+\end{table}
+}
+
 \section{Summary and Outlook}
 
 \subsection{Summary}
