@@ -24,7 +24,7 @@ function [contacts,avg_degree] = degree_distribution(adj_mat_bin)
           
         % figure
 
-        % bar(1:max(number_of_contacts(:,t)), 1/total_contacts*histc(number_of_contacts(:,t),1:max(number_of_contacts(:,t))),'histc')% Histogram of degree distribution
+        % bar(1:max(number_of_contacts(:,t)), 1/total_contacts*histc(number_of_contacts(:,t), 1:max(number_of_contacts(:,t))),'histc')% Histogram of degree distribution
         
         % figure
         
