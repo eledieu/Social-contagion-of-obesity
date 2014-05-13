@@ -113,7 +113,7 @@ To answer our question, we apply the SISa model to a dataset collected by Aharon
 
 \subsection{SIS model}
 \paragraph{}
-We use an extension of the classic SIS model proposed by Hill et al. The SIS model is an adaptation of the SIR model developed by Kermack and McKendrick (Kermack \& McKendrick, 1932). In the SIR model the population is divided into three groups: susceptible, infected, recovered. The disease is transmitted when a susceptible person enters in contact with an infected person with a so called transmission rate \beta \]. Once infected, a person can recover with a recovery rate g and then becomes completely immune to the disease. The SIS model allows to model a disease or a behaviour that can occur repeatedly meaning that recovering from the disease do not confer immunity.
+We use an extension of the classic SIS model proposed by Hill et al. The SIS model is an adaptation of the SIR model developed by Kermack and McKendrick (Kermack \& McKendrick, 1932). In the SIR model the population is divided into three groups: susceptible, infected, recovered. The disease is transmitted when a susceptible person enters in contact with an infected person with a so called transmission rate $\beta$. Once infected, a person can recover with a recovery rate g and then becomes completely immune to the disease. The SIS model allows to model a disease or a behaviour that can occur repeatedly meaning that recovering from the disease do not confer immunity.
 
 \paragraph{}
 
@@ -123,7 +123,7 @@ In the standard SIS model, infection can only be transmitted through the contact
       dS/dt   & =  -\beta SI+gI \\ 
       I+S & =  N \nonumber
 \end{align}
-where I is the number of infected individuals, and S is the number of susceptible individuals, \beta \] is the transmission rate, g is the recovery rate and N is the total population. 
+where I is the number of infected individuals, and S is the number of susceptible individuals, $\beta$ is the transmission rate, g is the recovery rate and N is the total population. 
 
 \subsection{SISa model}
 \paragraph{}
@@ -135,7 +135,7 @@ Hill et al. propose an extension of the SIS model, called SISa, to allow for aut
 \end{align}
 
 \paragraph{}
-The automatic infection rate  and the transmission rate can be deduced from the transition probabilities from susceptible to infected after a time \delta t\] such that:
+The automatic infection rate  and the transmission rate can be deduced from the transition probabilities from susceptible to infected after a time $\delta$t such that:
 \begin{equation}
 P(S\to I,\delta t) & \sim & (a+\beta n)\delta t
 \end{equation}
@@ -272,7 +272,7 @@ Despite Aharony et al. claims, the Friends and Family network does not appear to
 Another factor that a model purely based on social contagion does not capture is the alimentary culture that is not directly related to social interaction but largely shared across a social group. Some populations, and therefore the social networks they span, are much more at risk of a deregulation of equilibrium in their macronutrient intake, struggling to cover their protein needs while increasing their overall calories consumption. 
 
 \paragraph{}
-We take into account Shalizi and Thomas comments regarding environmental confounding and decided to examine the role of socio-environment in obesity. Using data from the US Department of Agriculture, we run a regression of the 2010 obesity prevalence in 3'137 US counties against the median household income in USD'000 of these same counties. These results highlight the role of confounding and support the argument of Shalizi and Thomas as we find a negative coefficient on the median household income in USD'000 equal to -0.19 and statistically significant at all conventional level. One possible explanation for this is that low income families might consume fatter food of lower quality because of budget constraints.
+We take into account Shalizi and Thomas comments regarding environmental confounding and decided to examine the role of socio-environment in obesity. Using data from the US Department of Agriculture, we run a regression of the 2010 obesity prevalence in 3'137 US counties against the median household income in USD'000 of these same counties. These results highlight the role of confounding and support the argument of Shalizi and Thomas as we find a negative coefficient on the median household income in USD'000 equal to -0.19 and statistically significant at all conventional level. This reveals that a thousand dollar of additional income is associated with a reduction of 0.19\% of obesity prevalence. One possible explanation for this is that low income families might consume fatter food of lower quality because of budget constraints.
 
 {
 \begin{table}[htbp]
