@@ -16,8 +16,8 @@ for a=0:0.06:1.2
             [susceptible,infected] = simulation_short(a,b,g, 18);
             result_infected(index1, index2, index3, :) = infected;
             result_susceptible(index1, index2, index3, :) = susceptible;
-            result_corr(index1, index2, index3) = xcorr(infected, sum(PersonID_x_AboveAtExam)/size(PersonID_x_AboveAtExam,1))
+            cor = xcorr(infected(:,1:145)/100, sum(PersonID_x_AboveAtExam)/size(PersonID_x_AboveAtExam,1));
+            result_corr(index1, index2, index3) = cor(1,1);
         end
     end
 end
-PAUSE;
