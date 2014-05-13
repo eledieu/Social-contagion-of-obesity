@@ -111,7 +111,7 @@ To answer our question, we apply the SISa model to a dataset collected by Aharon
 
 \subsection{SIS model}
 \paragraph{}
-We use an extension of the classic SIS model proposed by Hill et al. The SIS model is an adaptation of the SIR model developed by Kermack and McKendrick (Kermack \& McKendrick, 1932). In the SIR model the population is divided into three groups: susceptible, infected, recovered. The disease is transmitted when a susceptible person enters in contact with an infected person with a so called transmission rate \beta. Once infected, a person can recover with a recovery rate g and then becomes completely immune to the disease. The SIS model allows to model a disease or a behaviour that can occur repeatedly meaning that recovering from the disease do not confer immunity.
+We use an extension of the classic SIS model proposed by Hill et al. The SIS model is an adaptation of the SIR model developed by Kermack and McKendrick (Kermack \& McKendrick, 1932). In the SIR model the population is divided into three groups: susceptible, infected, recovered. The disease is transmitted when a susceptible person enters in contact with an infected person with a so called transmission rate \beta \]. Once infected, a person can recover with a recovery rate g and then becomes completely immune to the disease. The SIS model allows to model a disease or a behaviour that can occur repeatedly meaning that recovering from the disease do not confer immunity.
 
 \paragraph{}
 
@@ -121,7 +121,7 @@ In the standard SIS model, infection can only be transmitted through the contact
       dS/dt   & =  -\beta SI+gI \\ 
       I+S & =  N \nonumber
 \end{align}
-where I is the number of infected individuals, and S is the number of susceptible individuals, \beta is the transmission rate, g is the recovery rate and N is the total population. 
+where I is the number of infected individuals, and S is the number of susceptible individuals, \beta \] is the transmission rate, g is the recovery rate and N is the total population. 
 
 \subsection{SISa model}
 \paragraph{}
@@ -224,7 +224,7 @@ However we do not obtain significant results to support weight assortativity whe
 
 \subsection{Regression results}
 \paragraph{}
-Our findings relate in parts to the outcome of the analysis of Christakis. We solved to some extent the question raised in his talk at Dartmouth College in 2008 concerning the results in a different socio-economic environment, where perception of obesity is different. But when we used the body fat metric which is reportedly a more precise measure for obesity, we surprisingly did not encounter neater proof of the infectious characteristic of obesity, as we find a negative correlation. What's more, we determined in multiple tests that running the regression with even a small shift in the threshold value triggering a change of state, yielded a great impact in the outcome, even negating the correlation when ran against the body fat measure. This surprising mismatch between BMI and body fat, which normally relate to each other in terms of the following approximation formula for an adult: 
+Our findings relate in parts to the outcome of the analysis of Christakis. We solved to some extent the question raised in his talk at Dartmouth College in 2008 concerning the results in a different socio-economic environment, where perception of obesity is different. But when we used the body fat metric which is reportedly a more precise measure for obesity, we surprisingly did not encounter neater proof of the infectious characteristic of obesity, as we find a negative correlation. What's more, we determined in multiple tests that running the regression with even a small shift in the threshold value triggering a change of state, yielded a great impact in the outcome, even negating the correlation when ran against the body fat measure. This surprising mismatch between BMI and body fat, which normally relate to each other in terms of the following approximation formula for an adult (see Jackson, 2002): 
 \[Adult Body Fat \% = (1.20 * BMI) + (0.23 * Age) - (10.8 * gender) - 5.4\]
 , is, as far as we can tell, due to the remarkably high skeletal muscle percentage of the total weight reported by the study participants. This reflects the fact that the study participants were drawn from a university setting, where university athletes are overrepresented compared to the general population. 
 
@@ -323,6 +323,8 @@ Shalizi, C. R., \& Thomas, A. C. (2011). Homophily and contagion are generically
 Smith, K. P., \& Christakis, N. A. (2008). Social networks and health. Annu. Rev. Sociol, 34, 405–429.
 \paragraph{}
 USDA's Economic Research Service (2014). Food Environment Atlas Data Documentation. http://www.ers.usda.gov/data-products/food-environment-atlas/data-access-and-documentation-downloads.aspx#.U3I_SCjQBvF
+\paragraph{}
+Jackson AS, Stanforth PR, Gagnon J, et al. (2002). The effect of sex, age and race on estimating percentage body fat from body mass index: the Heritage Family Study. Int J Obes Relat Metab Disord, 26(6):789-96
 
 \newpage
 \section{Annexes}
