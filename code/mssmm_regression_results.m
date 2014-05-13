@@ -1,5 +1,5 @@
 function [above b g a] =mssmm_regression_results(change_above, change_under)
- % Compute the parameters to be used in the SIS and SISa model
+ % SUMMARY: Compute the parameters to be used in the SIS and SISa model
  
  %OUTPUT :: The parameters to be used in the SIS model and SISa model, by
  %determining the state that is infectious ( cf. Hill and al.)

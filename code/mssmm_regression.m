@@ -1,5 +1,5 @@
 function changes =mssmm_regression(persons_changed_states, count_contacts_above, number_contacts, under_to_above)
- % Compute the number of changes from under to above (or under) the threshold value
+ % SUMMARY: Compute the number of changes from under to above (or under) the threshold value
  % with respect to the number of contacts under (or above) threshold at the time step
  % of the change
  
