@@ -533,4 +533,136 @@ end
 
 \end{verbatim}
 
+\paragraph{File mssmm\_regression.m}
+\begin{verbatim}
+function changes =mssmm_regression(persons_changed_states, count_contacts_above, number_contacts, under_to_above)
+ % SUMMARY: Compute the number of changes from under to above (or under) the threshold value
+ % with respect to the number of contacts under (or above) threshold at the time step
+ % of the change
+ 
+ %OUTPUT :: A matrix of two columns. The first one corresponds to the number of contacts observed
+ % the second one to the percentage of the changes that took place in this particular configuration of contacts
+ 
+ %INPUT ::
+ % persons_changed_state : output of the function persons_changed_state
+ % (Returns a unique_persons by
+ % first_date_of_mesure_to_last_date_of_mesure matrix with absolute value 1
+ % if the person changed state with respect to previous day and 0 else.)
+ % count_matrix_above : output of the count_matrix function
+ % number_contacts : column vector with the total number of contacts of
+ % each person
+ % under_to_above : boolean value. if TRUE, then changes from under_to_above ; else
+ % then compute the changes from state above to state under threshold
+
+ 
+ pcs = -persons_changed_states;
+ contacts_new_state = count_contacts_above;
+ 
+ if ~(under_to_above)
+     pcs = persons_changed_states;
+     number_contacts = transpose(number_contacts);
+     n = size(count_contacts_above, 2);
+     contacts_new_state = repmat(number_contacts, 1, n)-contacts_new_state;
+ end
+ 
+ changes_with_counts = tabulate(uint8(contacts_new_state(pcs>0)));
+ changes = changes_with_counts(:,[1 2]);
+ changes(:,2) = changes(:,2)/size(persons_changed_states,1);
+   
+end
+
+\end{verbatim}
+
+\paragraph{File mssmm\_regression\_results.m}
+\begin{verbatim}
+function [above b g a] =mssmm_regression_results(change_above, change_under)
+ % SUMMARY: Compute the parameters to be used in the SIS and SISa model
+ 
+ %OUTPUT :: The parameters to be used in the SIS model and SISa model, by
+ %determining the state that is infectious ( cf. Hill and al.)
+ % above : boolean variable. 1 if above is the infectious state. 0 if under
+ % is the infectious state
+ 
+ %INPUT ::
+ % changes_above : output of the function msssm_regression on the changes
+ % from the under threshold state to the above threshold state
+ % changes_under : output of the function msssm_regression on the changes
+ % from the above threshold state to the under threshold state
+ 
+ 
+ x_above = change_above(:,1);
+ y_above = change_above(:,2)/100;
+ 
+ x_under = change_under(:,1);
+ y_under = change_under(:,2)/100;
+ 
+ lin_above = fitlm(x_above, y_above, 'linear') % use GeneralizedLinearModel.fit instead of firlm in versions prior to MatLab R2014a
+ lin_under = fitlm(x_under, y_under, 'linear')
+    
+ coef_above = cell2mat(table2cell(lin_above.Coefficients));
+ coef_under = cell2mat(table2cell(lin_under.Coefficients));
+ 
+ if double(coef_under(2,4)) > double(coef_above(2,4)) % Corresponds to a comparison of the p-value
+     above = 1;
+     b = double(coef_above(2,1));
+     a = double(coef_above(1,1));
+     g = change_under(1,2);
+ else
+     above = 0;
+     b = double(coef_under(2,1));
+     a = double(coef_under(1,1));
+     g = change_above(1,2);
+ end
+
+end
+
+\end{verbatim}
+
+\paragraph{File simulation.m}
+\begin{verbatim}
+function [susceptible,infected] = simulation(a,b,g, initial_infect, duration, step)
+    % SUMMARY: Simulates the SISa model for the automatic (or spontaneous)
+    % infection factor a, the transmission rate b, and the recovery rate g,
+    % for an initialy infected percentage of initial_infect, a duration of
+    % 'duration' days, with a resolution in the timesteps of step.
+    
+    % OUTPUT::
+            %susceptible vector with the susceptible percentage per timestep
+            % infecter vector with the infected percentage per timestep
+    % INPUT::
+            %parameters: a=spontaneous infection rate; b=transmission rate; g=recovery
+            %rate; duration=duration of the simulation; step=time step
+            
+    dt=step;        % time step, initialise manually here when desired
+    d = duration;   % simulated duration, initialise manually here when desired
+
+    % initial condition
+    S=100-initial_infect;      % Susceptible egos
+    I=initial_infect;   % Infected individualsS
+    % book-keeping variable
+    index = 0;
+
+    % simulation loop
+    for t=1:dt:d+1
+        index = index + 1;
+        dI = (b*S*I-g*I+a*S)*dt;
+        dS = (-b*S*I+g*I-a*S)*dt;
+        I = I + dI;
+        i(index) = I;
+        S = S + dS;
+        s(index) = S;
+    end
+    format short
+    x = linspace(1,t,(d/dt)+1);
+    plot(x,s)
+    grid on
+    hold on
+    plot(x,i,'o')
+    hold off
+    infected = i;
+    susceptible = s;
+end
+
+\end{verbatim}
+
 \end{document}  
