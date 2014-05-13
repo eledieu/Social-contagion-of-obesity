@@ -168,7 +168,7 @@ Subjects reported their self-perceived closeness to other egos on a scale from 0
 
 \paragraph{}
 
-Furthermore, we have analyzed additional properties of the network, namely its degree distribution, its diameter as well as the density. We both use Matlab and Gephi to perform the network analysis and visualization.
+Furthermore, we have analyzed additional properties of the network, namely its degree distribution, its diameter as well as the density. We both use Matlab and Gephi to perform the network analysis and visualization (see Figure 2).
 
 \begin{figure}[!ht]
 \center
@@ -190,7 +190,7 @@ We follow Hill and al. approach and perform a regression of the probability of t
 
 \subsection{Network characteristic}
 \paragraph{}
-The Friends and Family network consists of 85 nodes. The friends distribution varies across time as the self perceived closeness is measured at three different times. The degree distribution at t=1 is shown in the Figure []. The average degree distribution is quite stable over the measurement period standing at 6.7, 6.1, 7.4 for t=1...3. In comparison, the average degree amounted to 3 at the end of the Framingham Heart Study.
+The Friends and Family network consists of 85 nodes. The friends distribution varies across time as the self perceived closeness is measured at three different times. The degree distribution at t=1 is shown in the Figure 3. The average degree distribution is quite stable over the measurement period standing at 6.7, 6.1, 7.4 for t=1...3. In comparison, the average degree amounted to 3 at the end of the Framingham Heart Study.
 
 \paragraph{}
 We test a power law to fit the degree distribution of the network as many social networks are considered to be scale free networks (Barabási, 2009) and find that the Friends and Family network exhibits characteristics of a scale-free network.
@@ -205,7 +205,7 @@ We test a power law to fit the degree distribution of the network as many social
 The parameters of the power law fitted function y=\alpha x^\beta \]   are \alpha=55 \] \ and \beta=-1.07\].
 
 \paragraph{}
-We then test two types of assortativity: social assortativity and weight assortativity. We run the regression of the average nearest neighbor degree against the average degree of a subject to test the social assortativity of the network. The Friends and Family network is socially assortative as shown in Figure [] as subjects with a higher number of close friends tend to have a higher nearest neighbor degree. We find a positive coefficient on the average degree equal to 0.34 and significant at the 5\% level.
+We then test two types of assortativity: social assortativity and weight assortativity. We run the regression of the average nearest neighbor degree against the average degree of a subject to test the social assortativity of the network. The Friends and Family network is socially assortative as shown in Figure 4 as subjects with a higher number of close friends tend to have a higher nearest neighbor degree. We find a positive coefficient on the average degree equal to 0.34 and significant at the 5\% level.
 
 
 \begin{figure}[!ht]
@@ -215,7 +215,7 @@ We then test two types of assortativity: social assortativity and weight assorta
 \end{figure}
 
 \paragraph{}
-However we do not obtain significant results to support weight assortativity when running the regression of the average nearest neighbor weight against a subject's weight (see Figure []). The coefficient of the regression slope of the average nearest neighbor weight against a subject weight is not significant at any conventional level. We therefore conclude that a subject weight is not associated with its average nearest neighbor weight. 
+However we do not obtain significant results to support weight assortativity when running the regression of the average nearest neighbor weight against a subject's weight (see Figure 5). The coefficient of the regression slope of the average nearest neighbor weight against a subject weight is not significant at any conventional level. We therefore conclude that a subject weight is not associated with its average nearest neighbor weight. 
 
 \begin{figure}[!ht]
 \center
@@ -248,7 +248,7 @@ The evolution of the number of persons above a given threshold of BMI is strongl
 
 \subsection{Importance of the a parameter in a SISa model}
 \paragraph{}
-To tell things upfront, the SISa model is very sensible to the value of each single value, with the ration of \beta  \] /g being the most prevalent. As we can infer from the following graphs, a single decimal change can yield noticeable different outcomes.
+To tell things upfront, the SISa model is very sensible to the value of each single value, with the a parameter being the most prevalent. As we infered from our multiple test, a single decimal change can yield noticeable different outcomes.
 
 
 
@@ -258,7 +258,7 @@ The society implication of clearly understanding the to what extent and in which
 
 \subsection{Limitations}
 \paragraph{}
-Despite Aharony et al. claims, the Friends and Family network does not appear to be representative of the US population as all subjects were members of a residential living community living next to MIT. The BMI distribution of the Friends and Family network does not reflect the BMI distribution of the entire US population (see Figure []). Flegal et al. have found a prevalence of obesity of 35\% among US adults. In comparison, the mean BMI in the Friends and Family network is 23 and 5 out of the 85 subjects are obese in the sample at the beginning of the study.
+Despite Aharony et al. claims, the Friends and Family network does not appear to be representative of the US population as all subjects were members of a residential living community living next to MIT. The BMI distribution of the Friends and Family network does not reflect the BMI distribution of the entire US population (see Figure 6). Flegal et al. have found a prevalence of obesity of 35\% among US adults. In comparison, the mean BMI in the Friends and Family network is 23 and 5 out of the 85 subjects are obese in the sample at the beginning of the study.
 
 \begin{figure}[!ht]
 \center
@@ -271,7 +271,7 @@ Despite Aharony et al. claims, the Friends and Family network does not appear to
 Another factor that a model purely based on social contagion does not capture is the alimentary culture that is not directly related to social interaction but largely shared across a social group. Some populations, and therefore the social networks they span, are much more at risk of a deregulation of equilibrium in their macronutrient intake, struggling to cover their protein needs while increasing their overall calories consumption. 
 
 \paragraph{}
-We take into account Shalizi and Thomas comments regarding environmental confounding and decided to examine the role of socio-environment in obesity. Using data from the US Department of Agriculture, we run a regression of the 2010 obesity prevalence in 3'137 US counties against the median household income in USD'000 of these same counties. These results highlight the role of confounding and support the argument of Shalizi and Thomas as we find a negative coefficient on the median household income in USD'000 equal to -0.19 and statistically significant at all conventional level. This reveals that a thousand dollar of additional income is associated with a reduction of 0.19\% of obesity prevalence. One possible explanation for this is that low income families might consume fatter food of lower quality because of budget constraints.
+We take into account Shalizi and Thomas comments regarding environmental confounding and decided to examine the role of socio-environment in obesity. Using data from the US Department of Agriculture, we run a regression of the 2010 obesity prevalence in 3'137 US counties against the median household income in USD'000 of these same counties. These results highlight the role of confounding and support the argument of Shalizi and Thomas as we find a negative coefficient on the median household income in USD'000 equal to -0.19 and statistically significant at all conventional level (see Table 1). This reveals that a thousand dollar of additional income is associated with a reduction of 0.19\% of obesity prevalence. One possible explanation for this is that low income families might consume fatter food of lower quality because of budget constraints.
 
 
 {
