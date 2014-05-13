@@ -35,7 +35,7 @@
     figure(3);
     [susceptible,infected] = simulation(a,b,g, initial_infected, size(PersonID_x_AboveAtExam,2), 0.01);
 
-% First test: studied_variable=BMI, threshold=26: slight correlation,
+% Discussed tests: studied_variable=BMI, threshold=26: slight correlation,
 % ~stable state at 75% infected
 % Second test: studied_variable=body_fat, threshold=25: apparent negative correlation,
 % ~stable state at 15% infected

@@ -23,11 +23,11 @@ function [adj_mat,adj_mat_bin,unique_source,unique_target,unique_funf_group]=mss
         %length(unique_target)
         
     %% Return the experiment to which a person belongs (Control,See-Peer,Pay-Peer)
-%         unique_funf_group=cell(length(unique_source),1);
-%         for i=1:length(unique_source)    
-%             funf_group_index=find(ismember(source,unique_source(i)));
-%             unique_funf_group{i}=funf_group{funf_group_index};
-%         end
+    % unique_funf_group=cell(length(unique_source),1);
+    % for i=1:length(unique_source)    
+    %     funf_group_index=find(ismember(source,unique_source(i)));
+    %     unique_funf_group{i}=funf_group{funf_group_index};
+    % end
        
     %% Creation of the adjacency matrix
  
