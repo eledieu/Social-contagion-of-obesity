@@ -2,7 +2,7 @@
 % that has the number of obese contacts each person has at every timestep
 % weight_over_time: entry (i,j) represents whether person i is obese at
 % time j (entry in the matrix is one) or not (entry is zero)
-% adj matrix, entry (i,j) represents whether person i know person j or not
+% adj matrix, entry (i,j) represents whether person i knows person j or not
 function [number_of_obese_contacts] = count_obese_contacts(weight_over_time, adj_matrix)
     number_of_persons = size(weight_over_time,1);
     time_steps = size(weight_over_time,2);
