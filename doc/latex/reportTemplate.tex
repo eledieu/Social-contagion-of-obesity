@@ -53,8 +53,8 @@
 \newpage
 
 
-\begin{figure}[p]
-   \includegraphics{chartre.png}
+\begin{figure}[H]
+   \includegraphics[height=\textheight,keepaspectratio]{chartre.png}
 \end{figure}
 
 
@@ -84,7 +84,7 @@ We initially familiarized ourselves with the current literature and the SIS/SISa
 
 \subsection{Introduction}
 \paragraph{}
-Obesity is a major health concern in the world and particularly in the US. In the US, it is estimated that obesity causes annual mortality of more than 300'000 deaths per year (Flegal, Williamson, Pamuk, \& Rosenberg, 2004) despite the difficulty to precisely evaluate death directly linked to obesity. The World Health Organization defines obesity as a Body Mass Index higher than 30. In 2008, 507 Million adults were obese, see Figure 1.
+Obesity is a major health concern in the world and particularly in the US. In the US, it is estimated that obesity causes more than 300'000 deaths annually (Flegal, Williamson, Pamuk, \& Rosenberg, 2004) despite the difficulty to precisely evaluate death directly linked to obesity. The World Health Organization defines obesity as a Body Mass Index higher than 30. In 2008, 507 Million adults were obese, see Figure 1.
 \begin{figure}[!h]
 \center
    \includegraphics[width=\textwidth,keepaspectratio]{Nature_p50_Global_spread_of_obesity.png}
@@ -147,7 +147,7 @@ P(I\to S,\delta t) & \sim & g\delta t
 
 \paragraph{}
 
-In addition, we follow Hill et al. approach and examine how a contact with an infected persons influence the transition between states.
+In addition, we follow Hill et al. approach and examine how a contact with an infected person influence the transition between states.
 
 \section{Implementation}
 
@@ -227,9 +227,9 @@ However we do not obtain significant results to support weight assortativity whe
 
 \subsection{Regression results}
 \paragraph{}
-Our findings relate in parts to the outcome of the analysis of Christakis. We solved to some extent the question raised in his talk at Dartmouth College in 2008 concerning the results in a different socio-economic environment, where perception of obesity is different. But when we used the body fat metric which is reportedly a more precise measure for obesity, we surprisingly did not encounter neater proof of the infectious characteristic of obesity, as we find a negative correlation. What's more, we determined in multiple tests that running the regression with even a small shift in the threshold value triggering a change of state, yielded a great impact in the outcome, even negating the correlation when ran against the body fat measure. This surprising mismatch between BMI and body fat, which normally relate to each other in terms of the following approximation formula for an adult (see Jackson, 2002): 
+Our findings relate in parts to the outcome of the analysis of Christakis. We solved to some extent the question raised in his talk at Dartmouth College in 2008 concerning the results in a different socio-economic environment, where perception of obesity is different. But when we used the body fat metric which is reportedly a more precise measure for obesity, we surprisingly did not encounter neater proof of the infectious characteristic of obesity, as we find a negative correlation. What's more, we determined in multiple tests that running the regression with even a small shift in the threshold value triggering a change of state, yielded a great impact in the outcome, even negating the correlation when ran against the body fat measure. This surprising mismatch between BMI and body fat, which normally relate to each other in terms of the following approximation formula for an adult (Jackson, 2002): 
 \[Adult Body Fat \% = (1.20 * BMI) + (0.23 * Age) - (10.8 * gender) - 5.4\]
-, is, as far as we can tell, due to the remarkably high skeletal muscle percentage of the total weight reported by the study participants (see Janssen, 2000). This reflects the fact that the study participants were drawn from a university setting, where university athletes are overrepresented compared to the general population. 
+, is, as far as we can tell, due to the remarkably high skeletal muscle percentage of the total weight reported by the study participants (Janssen, 2000). This reflects the fact that the study participants were drawn from a university setting, where university athletes are overrepresented compared to the general population. 
 
 \paragraph{}
 To determine the parameters of the differential systems, we have made a regression over the percentage of change from one state to another given the number of contacts in the target state. The obtained p-values are high. The smaller p-value we obtain is indeed 0.306 for the study of the BMI with a threshold put at 25. The estimated parameters therefore do not seem reliable. 
@@ -304,11 +304,11 @@ Another reason behind obesity is people's sleeping habits. Sleep deprivation can
 
 \paragraph{}
 
-In order to better understand one of the major plague of our society, we have applied the SISa model proposed by Hill et al. to a sample of subjects living in a community next to MIT. Our aim was to evaluate the extent to which obesity spread through social networks. However when evaluating the SISa model parameters, neither do we find any evidence that obesity spread through social networks nor can we refute this. There are two main reasons accounting for such reasons. The first is that our results are highly influenced by the nature of our sample as there are only few datasets containing large longitudinal personal information on obesity and publicly accessible. The second is that the claim of obesity spread through social network has been subject to virulent controversy and our results may corroborate the doubts raised by Shalizi and Thomas. While we cannot conclude on weight homophily in our sample, we exhibited the role of social environment, namely household income in our case, in becoming obese. 
+In order to better understand one of the major plague of our society, we have applied the SISa model proposed by Hill et al. to a sample of subjects living in a community next to MIT. Our aim was to evaluate the extent to which obesity spread through social networks. However when evaluating the SISa model parameters, neither do we find any evidence that obesity spread through social networks nor can we refute this. There are two main reasons accounting for this. The first is that our results are highly influenced by the nature of our sample as there are only few datasets containing large longitudinal personal information on obesity and publicly accessible. The second is that the claim of obesity spread through social network has been subject to virulent controversy and our results may corroborate the doubts raised by Shalizi and Thomas. While we cannot conclude on weight homophily in our sample, we exhibited the role of social environment, namely household income in our case, in becoming obese. 
 
 \subsection{Outlook}
 
-Given the importance of obesity, we believe it is essential to account for the roles of confounding variables in obesity spread. We do not exclude that obesity may spread through social network and think it is critical to perform a new study based on dataset comparable to the Framingham Heart Study to clarify the controversy surrounding the potential social contagion of obesity. The number of deaths linked directly or indirectly to obesity as well as the high social costs of obesity (Cawley \& Meyerhoefer, 2012) are such that this issue needs to be tackled.
+Given the importance of obesity, we believe it is essential to account for the roles of confounding variables in obesity spread. We do not exclude that obesity may spread through social network and think it is critical to perform a new study based on a dataset comparable to the Framingham Heart Study to clarify the controversy surrounding the potential social contagion of obesity. The number of deaths linked directly or indirectly to obesity as well as the high social costs of obesity (Cawley \& Meyerhoefer, 2012) are such that this issue needs to be tackled.
 
 \newpage
 \section{References}
