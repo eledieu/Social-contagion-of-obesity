@@ -13,6 +13,9 @@
 	%Plots the evolution of the number of person above
     figure(1)
     plot(sum(PersonID_x_AboveAtExam)/size(PersonID_x_AboveAtExam,1))
+    title('Evolution in time of the number of persons above the threshold')
+    xlabel('Days')
+    ylabel('Number of persons above the given threshold of the studied variable')
 	% When did a transition from one state to the next happen and which way:
     PersonID_x_ChangedStateAtDayX = persons_changed_state( PersonID_x_AboveAtExam );
     % Number of contacts above the threshold at the exam:
@@ -25,15 +28,37 @@
     [above b g a] = mssmm_regression_results(change_above, change_under)
     % plot regression results
     figure(2);
-    plot(change_above(:,1),change_above(:,2))
-    hold on;
-    x = change_above(:,1);
-    y = b*x+a;
-    plot(x,y*100,'o');
-    hold off;
+    if(above==1)
+    	plot(change_above(:,1),change_above(:,2),'o')
+    	title('Regression results')
+    	xlabel('Number of contacts whose variable of interest is above the threshold (infectious state)')
+    	ylabel('Transition probability from under to above threshold state')
+    	hold on;
+    	x = change_above(:,1);
+    	y = b*x+a;
+    	plot(x,y*100);
+    	legend('Data points', 'Regression');
+    	hold off;
+    else
+    	plot(change_under(:,1),change_under(:,2), 'o')
+    	title('Regression results')
+    	xlabel('Number of contacts whose variable of interest is under the threshold (infectious state)')
+    	ylabel('Transition probability from above to under threshold state')
+    	hold on;
+    	x = change_under(:,1);
+    	y = b*x+a;
+    	plot(x,y*100);
+    	legend('Data points', 'Regression');
+       	hold off;
+    end
+    
     initial_infected = sum(PersonID_x_AboveAtExam(:,1)) * (100 / size(PersonID_x_AboveAtExam,1));
     figure(3);
     [susceptible,infected] = simulation(a,b,g, initial_infected, size(PersonID_x_AboveAtExam,2), 0.01);
+    title('Simulation done with the parameters obatined by the regression')
+    xlabel('Days')
+    ylabel('Percentage of the population')
+    legend('Susceptible state', 'Infected state')
 
 % Discussed tests: studied_variable=BMI, threshold=26: slight correlation,
 % ~stable state at 75% infected
