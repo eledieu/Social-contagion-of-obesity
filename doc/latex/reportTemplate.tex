@@ -66,7 +66,7 @@
 
 \section{Abstract}
 \paragraph{}
-Obesity is a major health concern in the US causing annual death of more than 300'000 deaths per year. World Health Organization has implemented intervention program to fight obesity.  Understanding how people become obese is key to design adequate intervention program. In 2007, Christakis and Fowler claimed that obesity spread through social networks and argued that contacts with obese person increase the likelihood of becoming obese. This claim has been subject to much controversy and was refuted by Shalizi and Thomas who highlighted the confusion made between social contagion, homophily and confounding.  Hill et al. have proposed a derived version of the SIS model, the SISa model, to allow for both social transmission of obesity and automatic infection. Using a network of 85 subjects living next to MIT for which longitudinal weight data were available, we try to fit a SISa model. However, we do not find any evidence of social contagion for obesity using conventional significance level keeping in mind the relatively limited size of our sample.
+Obesity is a major health concern in the US causing annual death of more than 300'000 deaths per year. World Health Organization has implemented intervention program to fight obesity.  Understanding how people become obese is key to design adequate intervention program. In 2007, Christakis and Fowler claimed that obesity spread through social networks and argued that contacts with obese person increase the likelihood of becoming obese. This claim has been subject to much controversy and was refuted by Shalizi and Thomas who highlighted the confusion made between social contagion, homophily and confounding.  Hill et al. have proposed a derived version of the SIS model, the SISa model, to allow for both social transmission of obesity and automatic infection. Using a network of 85 subjects living next to MIT for whom longitudinal weight data were available, we try to fit a SISa model. However, we do not find any evidence of social contagion for obesity using conventional significance level keeping in mind the relatively limited size of our sample.
 
 \section{Individual contributions}
 \paragraph{}
@@ -76,15 +76,15 @@ We initially familiarized ourselves with the current literature and the SIS/SISa
 
 \subsection{Introduction}
 \paragraph{}
-Obesity is a major health concern in the world and particularly in the US. In the US, it is estimated that obesity causes annual mortality of more than 300'000 deaths per year (Flegal, Williamson, Pamuk, & Rosenberg, 2004) despite the difficulty to precisely evaluate death directly linked to obesity. The World Health Organization defines obesity as a Body Mass Index higher than 30. WHO implemented in 2004 the WHO Global Strategy on Diet, Physical Activity and Health in order to cope with obesity. While WHO recognizes the importance of "supportive environments and communities" to fight obesity, most proposed solutions put the emphasis on an individual approach such as limiting the quantity of fat absorbed, increasing the consumption of fruits and vegetables or practising physical activity. 
+Obesity is a major health concern in the world and particularly in the US. In the US, it is estimated that obesity causes annual mortality of more than 300'000 deaths per year (Flegal, Williamson, Pamuk, \& Rosenberg, 2004) despite the difficulty to precisely evaluate death directly linked to obesity. The World Health Organization defines obesity as a Body Mass Index higher than 30. WHO implemented in 2004 the WHO Global Strategy on Diet, Physical Activity and Health in order to cope with obesity. While WHO recognizes the importance of "supportive environments and communities" to fight obesity, most proposed solutions put the emphasis on an individual approach such as limiting the quantity of fat absorbed, increasing the consumption of fruits and vegetables or practising physical activity. 
 
 \paragraph{}
-Smith and Christakis  highlight the importance of the social environment associated with the physical environment as a factor of good health hinting at public health interventions which should be elaborated in harmony with the social network. Christakis and Fowler (Christakis & Fowler, 2007) argue that obesity spread  through social networks as they find that contacts with obese persons increase the likelihood to become obese. This controversial result has been debated by many including Shalizi and Thomas (Shalizi & Thomas, 2011) who point out the confusion made between homophily where subjects gather with those who resemble them, social contagion and confounding.
+Smith and Christakis (Smith \& Christakis, 2008)  highlight the importance of the social environment associated with the physical environment as a factor of good health hinting at public health interventions which should be elaborated in harmony with the social network. Christakis and Fowler (Christakis \& Fowler, 2007) argue that obesity spread  through social networks as they find that contacts with obese persons increase the likelihood to become obese. This controversial result has been debated by many including Shalizi and Thomas (Shalizi \& Thomas, 2011) who point out the confusion made between homophily where subjects gather with those who resemble them, social contagion and confounding.
 
 \paragraph{}
-Hill et al. (Hill, Rand, Nowak, & Christakis, 2010) among others have extended the approach of Christakis and Fowler to allow for a transmission of obesity through social networks but also capture spontaneous non social contagion. They introduce a new model, the SISa model, derived from the classic SIS disease model to evaluate the relative effect of social and non social contagion. Hill et al. extend economic diffusion models which also include automatic diffusion by adding the possibility of recovery whereas economic diffusion are considered to be permanently acquired.
+Hill et al. (Hill, Rand, Nowak, \& Christakis, 2010) among others have extended the approach of Christakis and Fowler to allow for a transmission of obesity through social networks but also capture spontaneous non social contagion. They introduce a new model, the SISa model, derived from the classic SIS disease model to evaluate the relative effect of social and non social contagion. Hill et al. extend economic diffusion models which also include automatic diffusion by adding the possibility of recovery whereas economic diffusion are considered to be permanently acquired.
 
-\subsection{Motivation}
+\subsection{Motivations}
 \paragraph{}
 It is essential to understand how people become obese to design adequate health interventions and to decide if obesity has to be tackled as a clinical issue on an individual basis or through social network to spread positive behaviour to fight obesity.
 
@@ -92,28 +92,28 @@ It is essential to understand how people become obese to design adequate health 
 Therefore, we want to examine if social infection really plays a role in obesity spread and compare the  relative effect of social and automatic infection in obesity. We want to test if we find similar results as Hill et al. applying the SISa model to a different sample.
 
 \paragraph{}
-To answer our question, we apply the SISa model to a dataset collected by Aharony et al. (Aharony, Pan, Ip, Khayal, & Pentland, 2011) which contains one of the largest mobile data experiments done in academia to test the validity of the SISa model and estimate the model parameters in order to evaluate the social and non social aspects of obesity contagion. Aharony et al. have deployed a sensing system over 15 months to follow 130 adult members and collected their physical activity, their weight and their friendship status. We have restricted our study to a subset of 85 adults for which complete corpulence data were available.
+To answer our question, we apply the SISa model to a dataset collected by Aharony et al. (Aharony, Pan, Ip, Khayal, \& Pentland, 2011) which contains one of the largest mobile data experiments done in academia to test the validity of the SISa model and estimate the model parameters in order to evaluate the social and non social aspects of obesity contagion. Aharony et al. have deployed a sensing system over 15 months to follow 130 adult members and collected their physical activity, their weight and their friendship status. We have restricted our study to a subset of 85 adults for which complete corpulence data were available.
 
 
 \section{Description of the Model}
 
 \subsection{SIS model}
 \paragraph{}
-We use an extension of the classic SIS model proposed by Hill et al. The SIS model is an adaptation of the SIR model developed by Kermack and McKendrick (Kermack & McKendrick, 1932). In the SIR model the population is divided into three groups: susceptible, infected, recovered. The disease is transmitted when a susceptible person enters in contact with an infected person with a so called transmission rate β. Once infected, a person can recover with a recovery rate g and then becomes completely immune to the disease. The SIS model allows to model a disease or a behaviour that can occur repeatedly meaning that recovering from the disease do not confer immunity.
+We use an extension of the classic SIS model proposed by Hill et al. The SIS model is an adaptation of the SIR model developed by Kermack and McKendrick (Kermack \& McKendrick, 1932). In the SIR model the population is divided into three groups: susceptible, infected, recovered. The disease is transmitted when a susceptible person enters in contact with an infected person with a so called transmission rate \beta. Once infected, a person can recover with a recovery rate g and then becomes completely immune to the disease. The SIS model allows to model a disease or a behaviour that can occur repeatedly meaning that recovering from the disease do not confer immunity.
 
 \paragraph{}
 
-In the standard SIS model, infection can only be transmitted through the contact with an infected person. The SIS model is presented in :
+In the standard SIS model, infection can only be transmitted through the contact with an infected person. The SIS model is presented in (1):
 \begin{align}
       dI/dt  & =  \beta SI-gI \nonumber\\
       dS/dt   & =  -\beta SI+gI \\ 
       I+S & =  N \nonumber
 \end{align}
-where  is the number of  infected individuals, and  is the number of susceptible individuals,  is the transmission rate,  is the recovery rate and  is the total population. 
+where I is the number of infected individuals, and S is the number of susceptible individuals, \beta is the transmission rate, g is the recovery rate and N is the total population. 
 
 \subsection{SISa model}
 \paragraph{}
-Hill et al. propose an extension of the SIS model, called SISa, to allow for automatic infection without having social contact. They introduce the rate of automatic infection rate  to obtain the model described in :
+Hill et al. propose an extension of the SIS model, called SISa, to allow for automatic infection without having social contact. They introduce the rate of automatic infection rate  to obtain the model described in (2):
 \begin{align}
       dI/dt  & =  \beta SI-gI+aS \nonumber\\
       dS/dt   & =  -\beta SI+gI-aS \\
@@ -138,11 +138,11 @@ In addition, we follow Hill et al. approach and examine how a contact with an in
 
 \subsection{Data description}
 \paragraph{}
-In order to implement the SISa we searched for a longitudinal dataset with similar properties as the Framingham Heart Study dataset used by Hill et al. We used the Friends and Family dataset collected by Aharony et al. The dataset consists of 130 subjects who all belong to a young residential community with at least one family member affiliated to MIT. The data were collected from October 2010 to May 2011 and an intervention program was carried out from October to December 2010. We have therefore decided to restrict our study to a subsample of the data in which there was no intervention program in place and have therefore excluded the period running from October 2010 to December 2010. 
+In order to implement the SISa we searched for a longitudinal dataset with similar properties as the Framingham Heart Study dataset used by Hill et al. We used the Friends and Family dataset collected by Aharony et al. The dataset consists of 130 subjects who all belong to a young residential community with at least one family member affiliated to MIT. The data were collected from October 2010 to May 2011 and an intervention program was carried out from October to December 2010. We have therefore decided to restrict our study to a subsample of the data in which there was no intervention program in place to avoid any bias and have therefore excluded the period running from October 2010 to December 2010. 
 
 \paragraph{}
 
-One difficulty encountered was to harmonize the different files of the Friends and Family dataset which had to be cross-checked.
+One difficulty was to harmonize the different files of the Friends and Family dataset which had to be cross-checked.
 
 \subsubsection{Measure timing}
 \paragraph{}
@@ -164,7 +164,7 @@ For each subject, we track the change in BMI and body fat and define a threshold
 
 \subsection{Regression}
 \paragraph{}
-We follow Hill and al. approach and perform a regression of the probability of transitioning against the number of contacts which are in a particular state namely obese or non-obese.Based on the results of the regression, we estimate the coefficients of the SISa model and run a simulation to predict the spread of obesity.
+We follow Hill and al. approach and perform a regression of the probability of transitioning against the number of contacts which are in a particular state namely obese or non-obese. Based on the results of the regression, we estimate the coefficients of the SISa model and run a simulation to predict the spread of obesity.
 
 \section{Simulation Results and Discussion}
 
@@ -185,7 +185,7 @@ We test a power law to fit the degree distribution of the network as many social
 The parameters of the power law fitted function y=\alpha x^\beta \]   are \alpha=55 \] and \beta=-1.07\].
 
 \paragraph{}
-We then test two types of assortativity: social assortativity and weight assortativity. We run the regression of the average nearest neighbor degree against the average degree of a subject to test the social assortativity of the network. The Friends and Family network is socially assortative as shown in Figure 3as subjects with a higher number of close friends tend to have a higher nearest neighbor degree.We find a positive coefficient on the average degree equal to 0.34 and significant at the 5\% level.
+We then test two types of assortativity: social assortativity and weight assortativity. We run the regression of the average nearest neighbor degree against the average degree of a subject to test the social assortativity of the network. The Friends and Family network is socially assortative as shown in Figure 2 as subjects with a higher number of close friends tend to have a higher nearest neighbor degree. We find a positive coefficient on the average degree equal to 0.34 and significant at the 5\% level.
 
 
 \begin{figure}[!h]
@@ -206,16 +206,16 @@ However we do not obtain significant results to support weight assortativity whe
 
 \subsection{Regression results}
 \paragraph{}
-Our findings relate in parts to the outcome of the analysis of Christakis. We solved to some extent the question raised in his talk at Dartmouth College in 2008 concerning the outcome in a different socio-economic environment, where perception of obesity is different. But when we used the body fat metric which is reportedly a more precise measure for obesity, we surprisingly did not encounter neater proof of the infectious characteristic of obesity, as we find a negative correlation. What's more, we determined in multiple tests that running the regression with even a small shift in the threshold value triggering a change of state, yielded a great impact in the outcome, even negating the correlation when ran against the body fat measure. This surprising mismatch between BMI and body fat, which normally relate to each other in terms of the following approximation formula for an adult: 
+Our findings relate in parts to the outcome of the analysis of Christakis. We solved to some extent the question raised in his talk at Dartmouth College in 2008 concerning the results in a different socio-economic environment, where perception of obesity is different. But when we used the body fat metric which is reportedly a more precise measure for obesity, we surprisingly did not encounter neater proof of the infectious characteristic of obesity, as we find a negative correlation. What's more, we determined in multiple tests that running the regression with even a small shift in the threshold value triggering a change of state, yielded a great impact in the outcome, even negating the correlation when ran against the body fat measure. This surprising mismatch between BMI and body fat, which normally relate to each other in terms of the following approximation formula for an adult: 
 \[Adult Body Fat \% = (1.20 * BMI) + (0.23 * Age) - (10.8 * gender) - 5.4\]
 , is, as far as we can tell, due to the remarkably high skeletal muscle percentage of the total weight reported by the study participants. This reflects the fact that the study participants were drawn from a university setting, where university athletes are overrepresented compared to the general population. 
 
 \paragraph{}
-To determine the parameters of the differential systems, we have made a regression over the percentage of change from one state to another given the number of contacts in the target state. The obtained p-values are high. The smaller p-value we get is indeed 0.306 for the study of the BMI with a threshold put at 25. The parameters we get this way do not seem reliable. 
+To determine the parameters of the differential systems, we have made a regression over the percentage of change from one state to another given the number of contacts in the target state. The obtained p-values are high. The smaller p-value we obtain is indeed 0.306 for the study of the BMI with a threshold put at 25. The estimated parameters therefore do not seem reliable. 
 
 \paragraph{}
 
-Overall, we could not prove the thesis that obesity and overweight spread like a contagious disease nor refute it, and prove that the healthy state spreads, as in both ways the correlation was too small, especially given our small study sample of 85 subjects and the short time scale of 145 days, i.e. less than five months.
+Overall, we could not prove the thesis that obesity and overweight spread like a contagious disease nor refute it, and prove that the healthy state spreads, as in both ways the correlation was too small, especially given our small study sample of 85 subjects and the short time scale of the study which lasted less than five months.
 
 \subsection{Simulation results}
 \paragraph{}
@@ -224,7 +224,7 @@ The simulation parameters resulting of the regression on our data yielded a long
 %[Add the graph of the evolution of the number of the persons above threshold plot(sum(PersonID_x_AboveAtExam))
 
 \paragraph{}
-The evolution of the number of persons above a given threshold of BMI is strongly dependant on the threshold given but tend to grow. In order to observe if the SISa model could fit this data with any parameter, we calculated %% TO BE FINISHED
+The evolution of the number of persons above a given threshold of BMI is strongly dependent on the threshold given but tend to grow. In order to observe if the SISa model could fit this data with any parameter, we calculated %% TO BE FINISHED
 
 
 \subsection{Importance of the a parameter in a SISa model}
@@ -235,7 +235,7 @@ To tell things upfront, the SISa model is very sensible to the value of each sin
 
 \subsection{Society implication}
 \paragraph{}
-The society implication of clearly understanding the to what extent and in which manner social spreading of obesity happens are huge. Given that it is morally unacceptable to marginalize obese people and even the small direct correlation is hard to link causation, we prone a more holistic approach were obesity is seen as a risk factor as opposed to a disease . Thus this risk factor has to be contained through environmental reforms on one hand like easier access to sport facilities, bike to work initiatives, promotion of healthier food alternatives in canteen settings, and social reforms on the other hand where risk reduction due to obesity is rewarded and scheduled physical activity is integrated in the daily work routine. Politics also have to play a role as they did with the tobacco advertisement restrictions and warning by translating these efforts to the junk food advertisement restrictions and clearer formulated food declaration, lobbying for "junk food free" as they did for smoke free.
+The society implication of clearly understanding the to what extent and in which manner social spreading of obesity happens are huge. Given that it is morally unacceptable to marginalize obese people and even the small direct correlation is hard to link causation, we prone a more holistic approach where obesity is seen as a risk factor as opposed to a disease. Thus this risk factor has to be contained through environmental reforms on one hand like easier access to sport facilities, bike to work initiatives, promotion of healthier food alternatives in canteen settings, and social reforms on the other hand where risk reduction due to obesity is rewarded and scheduled physical activity is integrated in the daily work routine. Politics also have to play a role as they did with the tobacco advertisement restrictions and warning by translating these efforts to the junk food advertisement restrictions and clearer formulated food declaration, lobbying for "junk food free" as they did for smoke free (http://www.smokefree.ch/en/campaign/).
 
 \subsection{Limitations}
 \paragraph{}
@@ -253,15 +253,27 @@ Despite Aharony et al. claims, the Friends and Family network does not appear to
 Another factor that a model purely based on social contagion does not capture is the alimentary culture that is not directly related to social interaction but largely shared across a social group. Some populations, and therefore the social networks they span, are much more at risk of a deregulation of equilibrium in their macronutrient intake, struggling to cover their protein needs while increasing their overall calories consumption. 
 
 \paragraph{}
-We take into account Shalizi and Thomas comments regarding environmental confounding and decided to examine the role of socio-environment in obesity. Using data from the US Department of Agriculture, we run a regression of the 2010 obesity prevalence in 3'137 US counties against the median household income in USD'000 of these same counties. These results highlight the role of confounding and support the argument of Shalizi and Thomas as we find a negative coefficient on the median household income in USD'000 equal to -0.19 and statistically significant at all conventional level. One possible explanation for this is that low income families might consume lower quality food which often contains more fat because of budget constraints.
+We take into account Shalizi and Thomas comments regarding environmental confounding and decided to examine the role of socio-environment in obesity. Using data from the US Department of Agriculture, we run a regression of the 2010 obesity prevalence in 3'137 US counties against the median household income in USD'000 of these same counties. These results highlight the role of confounding and support the argument of Shalizi and Thomas as we find a negative coefficient on the median household income in USD'000 equal to -0.19 and statistically significant at all conventional level. One possible explanation for this is that low income families might consume fatter food of lower quality because of budget constraints.
 
 \section{Summary and Outlook}
+
+\subsection{Summary}
+
+\paragraph{}
+
+In order to better understand one of the major plague of our society, we have applied the SISa model proposed by Hill et al. to a sample of subjects living in a community next to MIT. Our aim was to evaluate the extent to which obesity spread through social networks. However when evaluating the SISa model parameters, neither do we find any evidence that obesity spread through social networks nor can we refute this. There are two main reasons accounting for such reasons. The first is that our results are highly influenced by the nature of our sample as there are only few datasets containing large longitudinal personal information on obesity and publicly accessible. The second is that the claim of obesity spread through social network has been subject to virulent controversy and our results may corroborate the doubts raised by Shalizi and Thomas. While we cannot conclude on weight homophily in our sample, we exhibited the role of social environment, namely household income in our case, in becoming obese. 
+
+\subsection{Outlook}
+
+Given the importance of obesity, we believe it is essential to account for the roles of confounding variables in obesity spread. We do not exclude that obesity may spread through social network and think it is critical to perform a new study based on dataset comparable to the Framingham Heart Study to clarify the controversy surrounding the potential social contagion of obesity. The number of deaths linked directly or indirectly to obesity as well as the high social costs of obesity (Cawley \& Meyerhoefer, 2012) are such that this issue needs to be tackled.
 
 \section{References}
 \paragraph{}
 Aharony, N., Pan, W., Ip, C., Khayal, I., \& Pentland, A. (2011). Social fMRI: Investigating and shaping social mechanisms in the real world. Pervasive and Mobile Computing, 7(6), 643–659.
 \paragraph{}
 Barabási, A.-L. (2009). Scale-free networks: a decade and beyond. Science, 325(5939), 412–413.
+\paragraph{}
+Cawley, J., \& Meyerhoefer, C. (2012). The medical care costs of obesity: an instrumental variables approach. Journal of health economics, 31(1), 219-230.
 \paragraph{}
 Christakis, N. A., \& Fowler, J. H. (2007). The spread of obesity in a large social network over 32 years. New England Journal of Medicine, 357(4), 370–379.
 \paragraph{}
@@ -271,11 +283,11 @@ Flegal, K. M., Williamson, D. F., Pamuk, E. R., \& Rosenberg, H. M. (2004). Esti
 \paragraph{}
 Hill, A. L., Rand, D. G., Nowak, M. A., \& Christakis, N. A. (2010). Infectious disease modeling of social contagion in networks. PLoS Computational Biology, 6(11), e1000968.
 \paragraph{}
-Kermack, W. O., & McKendrick, A. G. (1932). Contributions to the mathematical theory of epidemics. II. The problem of endemicity. Proceedings of the Royal Society of London. Series A, 138(834), 55–83.
+Kermack, W. O., \& McKendrick, A. G. (1932). Contributions to the mathematical theory of epidemics. II. The problem of endemicity. Proceedings of the Royal Society of London. Series A, 138(834), 55–83.
 \paragraph{}
-Shalizi, C. R., & Thomas, A. C. (2011). Homophily and contagion are generically confounded in observational social network studies. Sociological Methods & Research, 40(2), 211–239.
+Shalizi, C. R., \& Thomas, A. C. (2011). Homophily and contagion are generically confounded in observational social network studies. Sociological Methods & Research, 40(2), 211–239.
 \paragraph{}
-Smith, K. P., & Christakis, N. A. (2008). Social networks and health. Annu. Rev. Sociol, 34, 405–429.
+Smith, K. P., \& Christakis, N. A. (2008). Social networks and health. Annu. Rev. Sociol, 34, 405–429.
 
 \section{Annexes}
 \subsection{Code listing}
