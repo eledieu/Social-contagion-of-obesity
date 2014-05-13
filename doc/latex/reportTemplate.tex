@@ -8,6 +8,7 @@
 \usepackage{epstopdf}
 \usepackage{natbib}
 \usepackage{amssymb, amsmath}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode/mcode}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
 %\title{Title}
@@ -276,8 +277,32 @@ Shalizi, C. R., & Thomas, A. C. (2011). Homophily and contagion are generically 
 \paragraph{}
 Smith, K. P., & Christakis, N. A. (2008). Social networks and health. Annu. Rev. Sociol, 34, 405–429.
 
+\section{Annexes}
+\subsection{Code listing}
+\lstset{breaklines=true}
 
+\paragraph{File mssmm\_adj.m}
+\lstinputlisting{SourceCode/mssmm_adj.m}
 
+\paragraph{File degree\_distribution.m}
+\lstinputlisting{SourceCode/degree_distribution.m}
 
+\paragraph{File persons\_above\_interpolated.m}
+\lstinputlisting{SourceCode/persons_above_interpolated.m}
+
+\paragraph{File persons\_changed\_state.m}
+\lstinputlisting{SourceCode/persons_changed_state.m}
+
+\paragraph{File count\_obese\_contacts.m}
+\lstinputlisting{SourceCode/count_obese_contacts.m}
+
+\paragraph{File mssmm\_regression.m}
+\lstinputlisting{SourceCode/mssmm_regression.m}
+
+\paragraph{File mssmm\_regression\_results.m}
+\lstinputlisting{SourceCode/mssmm_regression_results.m}
+
+\paragraph{File simulation.m}
+\lstinputlisting{SourceCode/simulation.m}
 
 \end{document}  
